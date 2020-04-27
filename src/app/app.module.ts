@@ -15,6 +15,10 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { OpportunitiesComponent } from './opportunities/opportunities.component';
+import { FindJobComponent } from './find-job/find-job.component';
+import { FindInternshipComponent } from './find-internship/find-internship.component';
+import { PostJobComponent } from './post-job/post-job.component';
 
 
 @NgModule({
@@ -31,6 +35,10 @@ import { RegisterComponent } from './register/register.component';
   FooterComponent,
   LoginComponent,
   RegisterComponent,
+  OpportunitiesComponent,
+  FindJobComponent,
+  FindInternshipComponent,
+  PostJobComponent,
 
   ],
   imports: [

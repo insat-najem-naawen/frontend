@@ -21,13 +21,13 @@
           <a class="nav-link" href="#team">Team</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Opportunities</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opportunities</a>
 
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item">Find job</a>
-            <a class="dropdown-item" href="#">Find internship</a>
+            <a class="dropdown-item" [routerLink]="['findJob']">Find job</a>
+            <a class="dropdown-item" [routerLink]="['findInternship']">Find internship</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Post job opportunity</a>
+            <a class="dropdown-item" [routerLink]="['postJob']">Post job opportunity</a>
           </div>
         </li>
 
