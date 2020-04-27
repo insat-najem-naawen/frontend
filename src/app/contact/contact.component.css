@@ -1,0 +1,48 @@
+
+h1{
+  text-align: center;
+  color: #555!important;
+  padding-bottom: 10px;
+
+}
+h1::after{
+  content: '';
+  background: #007bff;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}
+
+#contact {
+  background : #efefef;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #777;
+}
+
+.contact-form {
+  padding: 15px;
+}
+
+.form-control {
+  border-radius: 0!important;
+  border: none!important;
+}
+
+
+::placeholder {
+  color: #999!important;
+}
+
+.follow {
+  background: #ffffff;
+  padding: 10px;
+  margin: 15px;
+}
+
+.contact-info .fas,.contact-info .fab {
+  margin: 10px;
+  color: #007bff;
+  font-weight: bold;
+}
