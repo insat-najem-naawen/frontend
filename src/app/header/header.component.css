@@ -5,8 +5,9 @@
 
 
 .titre {
-  height: 50px;
-  margin-left: 30px;
+  height: 60px;
+  width: 200px;
+  margin-left: 15px;
 }
 /*-----navigation-------*/
 #nav-bar {
