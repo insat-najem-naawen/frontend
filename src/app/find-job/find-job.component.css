@@ -1,8 +1,10 @@
-body {
-  padding-top: 50px;
+.col-md-12{
+  margin-top: 200px;
+  padding: 25px;
 }
+
 .dropdown.dropdown-lg .dropdown-menu {
-  margin-top: -1px;
+  margin-top: 0px;
   padding: 6px 20px;
 }
 .input-group-btn .btn-group {
@@ -41,3 +43,35 @@ body {
     min-width: 500px;
   }
 }
+.wrapper {
+  background: url("../../assets/images/job_opportunity.png");
+  background-size: cover;
+  height: 597px;
+  opacity: 0.8;
+}
+
+#formFooter {
+  background-color: #f6f6f6;
+  border-top: 1px solid #dce8f1;
+  padding: 27px 20px 29px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+  opacity: 50%;
+  margin-left: 480px;
+  position: fixed;
+  display: inline-block;
+  width: auto;
+  margin-top: 20px;
+}
+#formFooter:hover{
+  background-color: #f8f9fa;
+  opacity: 100%;
+}
+h1{
+  color: floralwhite;
+  font-size: 100px;
+  margin-left: 320px;
+}
+
+

@@ -16,6 +16,7 @@ const APP_ROUTING: Routes = [
   {path: 'opportunities', component: OpportunitiesComponent},
   {path: 'findJob', component: FindJobComponent},
   {path: 'postJob', component: PostJobComponent},
-  {path: 'findInternship', component: FindInternshipComponent}
+  {path: 'findInternship', component: FindInternshipComponent},
+  {path: 'findJob/postJob', component: PostJobComponent}
   ];
 export const ROUTING = RouterModule.forRoot(APP_ROUTING);

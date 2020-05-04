@@ -1,3 +1,4 @@
+<div class="wrapper" >
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -6,25 +7,27 @@
         <div class="input-group-btn">
           <div class="btn-group" role="group">
             <div class="dropdown dropdown-lg">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+              </button>
               <div class="dropdown-menu dropdown-menu-right" role="menu">
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
                    <label >Filter by</label>
                     <select class="form-control">
-                      <option value="0" selected>Tunisia</option>
-                      <option value="1">Featured</option>
-                      <option value="2">Most popular</option>
-                      <option value="3">Top rated</option>
-                      <option value="4">Most commented</option>
+                      <option value="0" selected>Jobs by location</option>
+                      <option value="1">Tunisia</option>
+                      <option value="2">Europe</option>
+                      <option value="3">United States</option>
+                      <option value="4">Others</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label >Domain</label>
+                    <label >Jobs by sector</label>
                     <input class="form-control" type="text" />
                   </div>
                   <div class="form-group">
-                   <label >Contains the words</label>
+                   <label >Jobs by company</label>
                     <input class="form-control" type="text" />
                   </div>
                   <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -38,3 +41,11 @@
     </div>
   </div>
 </div>
+  <span id="formFooter">
+    <span>Are you a company ?</span>
+     <a [routerLink]="['postJob']" >
+      Post a job opportunity
+     </a>
+  </span>
+</div>
+
