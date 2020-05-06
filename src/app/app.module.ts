@@ -19,8 +19,9 @@ import { OpportunitiesComponent } from './opportunities/opportunities.component'
 import { FindJobComponent } from './find-job/find-job.component';
 import { FindInternshipComponent } from './find-internship/find-internship.component';
 import { PostJobComponent } from './post-job/post-job.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,14 @@ import { PostJobComponent } from './post-job/post-job.component';
   imports: [
     BrowserModule,
     RouterModule,
-    ROUTING
+    ROUTING,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    LoginComponent,
+    RegisterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

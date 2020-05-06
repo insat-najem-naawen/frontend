@@ -1,24 +1,80 @@
-<div id="loginForm" class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
-
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <div id="icon">Welcome to our site</div>
-    </div>
-
-    <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      Not a member yet ?
-      <a class="underlineHover" [routerLink]="['register']">register here</a>
-    </div>
-
+<form class="cont" #loginFormulaire= "ngForm" >
+  <div class="form sign-in">
+    <h2>Welcome back,</h2>
+    <label>
+      <span>Email</span>
+      <input type="email"
+             #inputMail="ngModel"
+             required
+             id="email"
+             ngModel name="email"
+             class="form-control"/>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password"
+             #pwd="ngModel"
+             required
+             id="password"
+             ngModel name="password"
+             class="form-control">
+    </label>
+    <!--    <p class="forgot-pass">Forgot password?</p>-->
+    <button type="button" class="submit"
+            [disabled]="loginFormulaire.invalid">
+      Login</button>
+    <!--    <button type="button" class="fb-btn">Connect with <span>facebook</span></button>-->
   </div>
-</div>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New here?</h2>
+        <p>Sign up and discover great amount of new opportunities!</p>
+      </div>
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>If you already has an account, just sign in. We've missed you!</p>
+      </div>
+      <div class="img__btn" (click)="open()">
+        <span class="m--up">Register</span>
+        <span class="m--in">Login</span>
+      </div>
+    </div>
+
+
+
+    <div class="form sign-up">
+      <h2>Time to feel like home,</h2>
+      <label>
+        <span>Name</span>
+        <input type="text"
+               #inputName="ngModel"
+               required
+               id="name"
+               ngModel name="name"
+               class="form-control"/>
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email"
+               #inputMail="ngModel"
+               required
+               id="emailreg"
+               ngModel name="email_reg"
+               class="form-control"/>
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password"
+               #pwd="ngModel"
+               required
+               id="pwd"
+               ngModel name="password_reg"
+               class="form-control"/>
+      </label>
+      <button type="button" class="submit">Register</button>
+      <!--      <button type="button" class="fb-btn">Join with <span>facebook</span></button>-->
+    </div>
+  </div>
+</form>
+

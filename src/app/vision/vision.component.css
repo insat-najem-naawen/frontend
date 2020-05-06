@@ -24,11 +24,13 @@
 .vision {
   margin-top:40px;
 }
-
 .icon {
   font-size: 40px;
   margin: 20px auto;
   padding: 20px;
+  font-size: 55px;
+  margin: 20px auto;
+  padding: 18px;
   height: 100px;
   width: 100px;
   border: 1px solid #fff;
