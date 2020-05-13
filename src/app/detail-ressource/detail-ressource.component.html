@@ -1,0 +1,10 @@
+<div *ngIf="ressource" id="cov"  style="width: 50rem;">
+  <img class="card-img-top" src="{{ressource.image}}" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">{{ressource.title}}</h4>
+    <button class="btn-dark text-white">{{ressource.category}} </button>
+    <div class="card-text">{{ressource.description}}</div>
+    <a href="{{ressource.link}}">{{ressource.link}}</a>
+  </div>
+</div>
+

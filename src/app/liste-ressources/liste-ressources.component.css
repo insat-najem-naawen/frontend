@@ -1,0 +1,45 @@
+/*.card-img {*/
+/*  margin-left: 300px;*/
+/*}*/
+.container {
+  margin-top: 30%;
+  margin-left: 200px;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card {
+  transition:  1.05s ease;
+}
+
+.card:hover  {
+  transform: scale(1.05);
+}
+
+
+
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  transition:  1.08s ease;
+}
+
+.inner:hover img  {
+  transform: scale(1.08);
+}
+p {
+  height: 80px; /* à modifier selon vos besoins */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: left;
+}
+.btn {
+margin-right: 140px;}

@@ -22,6 +22,9 @@ import { PostJobComponent } from './post-job/post-job.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import {FormsModule} from '@angular/forms';
+import { RessourcesComponent } from './ressources/ressources.component';
+import { DetailRessourceComponent } from './detail-ressource/detail-ressource.component';
+import { ListeRessourcesComponent } from './liste-ressources/liste-ressources.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,9 @@ import {FormsModule} from '@angular/forms';
   FindJobComponent,
   FindInternshipComponent,
   PostJobComponent,
+  RessourcesComponent,
+  DetailRessourceComponent,
+  ListeRessourcesComponent,
 
   ],
   imports: [
