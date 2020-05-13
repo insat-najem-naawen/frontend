@@ -22,13 +22,13 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opportunities</a>
-
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['findJob']">Find job</a>
-            <a class="dropdown-item" [routerLink]="['findInternship']">Find internship</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="['postJob']">Post job opportunity</a>
-          </div>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="['findJob']">Find job</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-item" [routerLink]="['findInternship']">Find internship</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-item" [routerLink]="['postJob']">Post job opportunity</a></li>
+          </ul>
         </li>
 
         <li class="nav-item dropdown">
@@ -36,11 +36,11 @@
             Services & resources
           </a>
 
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item">Create CV</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Formation</a>
-          </div>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item">Create CV</a></li>
+            <li class="divider"></li>
+            <li><a class="dropdown-item" href="#">Formation</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>
