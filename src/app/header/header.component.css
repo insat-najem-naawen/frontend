@@ -60,9 +60,10 @@ float: right;
   background-color: transparent;
   border: 0;
 }
-.dropdown-divider {
-  height: 5px;
-  border-top: 5px solid ;
-  color: #0d0d0d;
-  display: compact;
+.divider{
+  height: 2px;
+  margin: 5px;
+  overflow: hidden;
+  background-color: #f8f9fa;
 }
+

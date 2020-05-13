@@ -1,3 +1,6 @@
+.col-md-12{
+  padding: 25px;
+}
 body {
   padding-top: 0px;
 }
@@ -42,30 +45,38 @@ body {
   }
 }
 .wrapper {
-  background: url("../../assets/images/slider9.png");
+  background: url("../../assets/images/internship.jpg");
   background-size: cover;
-  height: 500px;
+  height: 596px;
   opacity: 0.8;
 }
 
 
 #formFooter {
+  font-size: large;
   background-color: #f6f6f6;
   border-top: 1px solid #dce8f1;
-  padding: 25px;
+  padding: 27px 20px 29px;
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
-  border-radius: 0 0 10px 10px;
-  opacity: 50%;
-  margin-left: 480px;
-  position: fixed;
+  border-radius: 10px 10px 10px 10px;
+  opacity: 70%;
+  margin-left: 460px;
+  margin-top: 140px;
+  position: static;
+  display: inline-block;
+  width: auto;
 }
 #formFooter:hover{
   background-color: #f8f9fa;
   opacity: 100%;
 }
 h1{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
   color: floralwhite;
-  font-size: 80px;
-  margin-left: 200px;
+  font-size: 40px;
+  margin-left: 430px;
+  padding-top: 200px;
 }
+
