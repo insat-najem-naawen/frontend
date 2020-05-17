@@ -25,6 +25,7 @@ import {FormsModule} from '@angular/forms';
 import { RessourcesComponent } from './ressources/ressources.component';
 import { DetailRessourceComponent } from './detail-ressource/detail-ressource.component';
 import { ListeRessourcesComponent } from './liste-ressources/liste-ressources.component';
+import { CategoryRessourcesComponent } from './category-ressources/category-ressources.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { ListeRessourcesComponent } from './liste-ressources/liste-ressources.co
   RessourcesComponent,
   DetailRessourceComponent,
   ListeRessourcesComponent,
+  CategoryRessourcesComponent
 
   ],
   imports: [

@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
 })
 export class ListeRessourcesComponent implements OnInit {
   ressources: Ressource[];
-
   constructor(private ressource: RessourcesService,
               private router: Router) { }
 
@@ -18,4 +17,12 @@ export class ListeRessourcesComponent implements OnInit {
     this.ressources = this.ressource.getRessources();
   }
 
+  detail(id: number) {
+    const link = ['detailRessource', id];
+    this.router.navigate(link);
+}
+lister(category: string) {
+    const link = ['ressources', category];
+    this.router.navigate(link);
+}
 }

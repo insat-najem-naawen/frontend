@@ -1,10 +1,27 @@
-<div *ngIf="ressource" id="cov"  style="width: 50rem;">
-  <img class="card-img-top" src="{{ressource.image}}" alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title">{{ressource.title}}</h4>
-    <button class="btn-dark text-white">{{ressource.category}} </button>
-    <div class="card-text">{{ressource.description}}</div>
-    <a href="{{ressource.link}}">{{ressource.link}}</a>
+<div class="contenu">
+  <!--nav-bar-->
+  <nav>
+    <label class="logo">Ressources & services</label>
+    <ul>
+      <li>
+        <a><i class="fa fa-search" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <div *ngIf="ressource" id="cov"  style="width: 50rem;">
+    <button class="btn-dark text-white" (click)="lister(ressource.category)" >{{ressource.category}} </button>
+    <h4 class="card-title"><b>{{ressource.title}}</b></h4>
+
+    <img class="card-img-top" src="{{ressource.image}}" alt="Card image cap">
+    <div class="card-body">
+      <div class="card-text">{{ressource.description}}</div>
+      <a href="{{ressource.link}}">{{ressource.link}}</a>
+    </div>
   </div>
 </div>
+
 

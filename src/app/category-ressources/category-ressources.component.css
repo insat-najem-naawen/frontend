@@ -1,0 +1,220 @@
+
+/*.background .rotate {*/
+/*  top: calc(50% - 200px);*/
+/*  left: calc(50% - 200px);*/
+/*  width: 400px;*/
+/*  height: 400px;*/
+/*  transform-style: preserve-3d;*/
+/*  animation: rotate 20s linear infinite ;*/
+/*  zoom: 4;*/
+/*  position: absolute;*/
+/*}*/
+/*@keyframes rotate {*/
+/*  0%*/
+/*  {*/
+/*    transform: rotateX(0deg) rotateY(0deg);*/
+/*  }*/
+/*  100% {*/
+/*    transform: rotateX(360deg) rotateY(360deg);*/
+/*  }*/
+/*}*/
+/*.background .rotate .sphere {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  transform-style: preserve-3d;*/
+/*}*/
+/*.background .rotate .sphere:nth-child(2) {*/
+/*  transform: rotate(90deg);*/
+/*}*/
+/*.background .rotate .sphere:nth-child(3) {*/
+/*  transform: rotate(45deg);*/
+/*}*/
+/*.background .rotate .sphere:nth-child(4) {*/
+/*  transform: rotate(-45deg);*/
+/*}*/
+/*.background .rotate .sphere span {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  transform-style: preserve-3d;*/
+/*  background: radial-gradient(#ccc,#fff);*/
+/*  border-radius: 50%;*/
+/*}*/
+/*.background .rotate .sphere span:nth-child(1){*/
+/*  transform:  rotateY(0deg);*/
+/*}*/
+/*.background .rotate .sphere span:nth-child(2){*/
+/*  transform:  rotateY(30deg);*/
+/*}*/
+/*.background .rotate .sphere span:nth-child(3){*/
+/*  transform:  rotateY(6deg);*/
+/*}*/
+/*.background .rotate .sphere span:nth-child(4){*/
+/*  transform:  rotateY(90deg);*/
+/*}*/
+/*.background .rotate .sphere span:nth-child(5){*/
+/*  transform:  rotateY(120deg);*/
+/*}*/
+/*.background .rotate .sphere span:nth-child(6){*/
+/*  transform:  rotateY(150deg);*/
+/*}*/
+
+
+.contenu {
+  background: url("detail4.jpg") no-repeat ;
+  background-size: cover;
+}
+.container {
+  /*background-color: #FFFF;*/
+  margin-top: 1%;
+  margin-left: 250px;
+  display: table;
+  /*box-sizing: border-box;*/
+  width: 1000px;
+  /*vertical-align: baseline;*/
+  margin-top: 20px;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/*body{*/
+/*  width: 100%;*/
+/*  height: 100vh;*/
+/*  background: lightgray;*/
+/*  background: linear-gradient(57deg, #DCDCDC , #DCDCDC );*/
+/*  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);*/
+/*  overflow: hidden;*/
+
+/*}*/
+
+nav {
+  background:#22427C ;
+  height: 50px;
+  width: 100%;
+  position: sticky;
+}
+
+label.logo{
+  color: white;
+  font-size: 25px;
+  line-height: 50px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 50px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+/*a.active, a:hover {*/
+/*  background: #21097C;*/
+/*  transition: .5s;*/
+/*}*/
+
+@media (max-width: 925px) {
+  label.logo {
+    font-size: 20px;
+    padding-left: 50px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .container {
+    margin-left: 2px;
+    display: table;
+    box-sizing: border-box;
+    width: 5px;
+  }
+
+  .column {
+    display: table-cell;
+    padding: 2px;
+    width: 4%;
+    text-align: right;
+    vertical-align: middle;
+    border-right: 0px solid #FFFFFF;
+    border-left: 150px solid #FFFFFF;
+  }
+}
+
+
+.card {
+  overflow: hidden;
+}
+
+.cards {
+  transition:  1.05s ease;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.card:hover  {
+  transform: scale(1.05);
+}
+
+
+
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  transition:  1.08s ease;
+}
+
+.inner:hover img  {
+  transform: scale(1.08);
+}
+p {
+  height: 80px; /* à modifier selon vos besoins */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: left;
+}
+.btn {
+  margin-right: 400px;
+  margin-bottom: 10px}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+h1 {
+font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+}

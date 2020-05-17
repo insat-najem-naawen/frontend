@@ -9,6 +9,7 @@ import {FindInternshipComponent} from './find-internship/find-internship.compone
 import {RessourcesComponent} from './ressources/ressources.component';
 import {DetailRessourceComponent} from './detail-ressource/detail-ressource.component';
 import {ListeRessourcesComponent} from './liste-ressources/liste-ressources.component';
+import {CategoryRessourcesComponent} from './category-ressources/category-ressources.component';
 
 
 
@@ -23,6 +24,7 @@ const APP_ROUTING: Routes = [
   {path: 'findJob/postJob', component: PostJobComponent},
   {path: 'ressources', component: RessourcesComponent},
   {path: 'listeRessources', component: ListeRessourcesComponent},
-  {path: 'detailRessource/:id', component: DetailRessourceComponent}
+  {path: 'detailRessource/:id', component: DetailRessourceComponent},
+  {path: 'ressources/:category', component: CategoryRessourcesComponent}
   ];
 export const ROUTING = RouterModule.forRoot(APP_ROUTING);

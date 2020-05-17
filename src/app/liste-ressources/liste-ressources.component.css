@@ -1,10 +1,59 @@
 /*.card-img {*/
 /*  margin-left: 300px;*/
 /*}*/
+
+
+
 .container {
-  margin-top: 30%;
-  margin-left: 200px;
+background-color: #FFFFFF;
+  margin-top: 1%;
+  margin-left: 320px;
+  display: table;
+  box-sizing: border-box;
+  width: 720px;
+  vertical-align: baseline;
 }
+
+.column {
+  display: table-column;
+  padding: 2px;
+  width: 45%;
+  text-align: right;
+  vertical-align: middle;
+  border-right: 0px solid #FFFFFF;
+  border-left: 0px solid #FFFFFF;
+  margin-left: 36px;
+}
+.row {
+  margin: 10px 0;
+}
+
+.hero-image{
+background: url("Ressources.png") no-repeat center;
+  background-size: 900px;
+  height: 520px;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  top: 25%;
+  left: 25%;
+  position: absolute;
+  color: black;
+  width: 30%;
+  /*background: rgba(F,F,0,0.5);*/
+  padding: 40px;
+  margin-left: -100px ;
+}
+.hero {
+background-color: white;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
 
 .card {
   overflow: hidden;
@@ -42,4 +91,92 @@ h4 {
   text-align: left;
 }
 .btn {
-margin-right: 140px;}
+margin-right: 400px;
+margin-bottom: 10px}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+nav {
+  background:#22427C ;
+  height: 50px;
+  width: 100%;
+  position: sticky;
+}
+
+label.logo{
+  color: white;
+  font-size: 25px;
+  line-height: 50px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 50px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+/*a.active, a:hover {*/
+/*  background: #21097C;*/
+/*  transition: .5s;*/
+/*}*/
+
+@media (max-width: 925px) {
+  label.logo {
+    font-size: 20px;
+    padding-left: 50px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .container {
+    margin-left: 2px;
+    display: table;
+    box-sizing: border-box;
+    width: 5px;
+  }
+
+  .column {
+    display: table-cell;
+    padding: 2px;
+    width: 4%;
+    text-align: right;
+    vertical-align: middle;
+    border-right: 0px solid #FFFFFF;
+    border-left: 150px solid #FFFFFF;
+  }
+}
+
+
+.pagination {
+  display: inline-block;
+  margin-left: 550px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
