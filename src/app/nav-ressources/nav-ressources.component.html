@@ -1,0 +1,23 @@
+<!--nav-bar-->
+<nav>
+  <label class="logo" routerLink="/listeRessources">Ressources & services</label>
+  <ul>
+    <li>
+      <a><i class="fa fa-search" aria-hidden="true" (click)="openSearch()"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div id="myOverlay" class="overlay">
+  <span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>
+  <div class="overlay-content">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search"><i id="item1" class="fa fa-search"></i>
+    </form>
+    <h1>May we suggest</h1>
+    <h2 (click)="lister('formation')">#Formation</h2>
+    <h2 (click)="lister('documents')">#Documents</h2>
+
+  </div>
+</div>

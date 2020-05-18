@@ -1,69 +1,61 @@
+<div class="contenu">
+  <app-nav-ressources></app-nav-ressources>
+  <!--<body>-->
+  <!--&lt;!&ndash;slide&ndash;&gt;-->
 
-<!--nav-bar-->
-<nav>
-  <label class="logo">Ressources & services</label>
-  <ul>
-    <li>
-      <a><i class="fa fa-search" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-</nav>
 
-<!--<body>-->
-<!--slide-->
-<div class="hero-image">
-  <div class="hero-text">
-    <div class="hero">
-      <h2>A special ressource or service</h2>
-      <h3>Description<br>
-        descritpion<br>
-        description<br>
-        description<br>
-        description<br>
-        description<br>
-      link</h3>
+  <div class="hero-image">
+    <div class="hero-text">
+      <div class="hero">
+        <h2>A special ressource or service</h2>
+        <h3>Description<br>
+          descritpion<br>
+          description<br>
+          description<br>
+          description<br>
+          description<br>
+          link</h3>
 
+      </div>
     </div>
   </div>
-</div>
 
-
-
-<!--liste des ressources-->
-<div class=" container">
-  <div class="row" >
-    <div class="column"  *ngFor="let ressource of ressources" >
-      <div   style="width: 20rem; height: 25rem;">
-        <div class="inner" (click)="detail(ressource.id)">
-          <img class="card-img-top" src="{{ressource.image}}">
-        </div>
-        <div class="card-body text-center">
-          <h4 class="card-title" (click)="detail(ressource.id)"><b>{{ressource.title}}</b></h4>
-          <button  class="btn btn-dark text-white" (click)="lister(ressource.category)" >{{ressource.category}}</button>
-          <div><p class="card-text">{{ressource.description}}
-            <a href="{{ressource.link}}">{{ressource.link}}</a>
-          </p></div>
-          <a [routerLink]="['/detailRessource', ressource.id]">Read more >></a>
+  <!--liste des ressources-->
+  <div class="container">
+    <div class="row" >
+      <div class="column"  *ngFor="let ressource of ressources" >
+        <div   style="width: 20rem; height: 25rem;">
+          <div class="inner" (click)="detail(ressource.id)">
+            <img class="card-img-top" src="{{ressource.image}}">
+          </div>
+          <div class="card-body text-center">
+            <h4 class="card-title" (click)="detail(ressource.id)"><b>{{ressource.title}}</b></h4>
+            <button  class="btn btn-dark text-white" (click)="lister(ressource.category)" >{{ressource.category}}</button>
+            <div><p class="card-text">{{ressource.description}}
+              <a href="{{ressource.link}}">{{ressource.link}}</a>
+            </p></div>
+            <a [routerLink]="['/detailRessource', ressource.id]">Read more >></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!--pagination-->
+  <div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+  </div>
+
+
+
+
+  <!--</body>-->
+
 </div>
-
-<!--pagination-->
-<div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  <a href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-</div>
-
-
-
-
-<!--</body>-->

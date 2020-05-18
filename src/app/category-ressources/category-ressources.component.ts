@@ -24,5 +24,17 @@ ressources: Ressource[];
     const link = ['detailRessource', id];
     this.router.navigate(link);
   }
+  lister(category: string) {
+    const link = ['ressources', category];
+    this.router.navigate(link);
+  }
+
+  openSearch() {
+    document.getElementById('myOverlay').style.display = 'block';
+  }
+
+  closeSearch() {
+    document.getElementById('myOverlay').style.display = 'none';
+  }
 
 }
