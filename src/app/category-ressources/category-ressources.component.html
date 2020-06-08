@@ -1,26 +1,38 @@
 
 <div class="contenu">
- <app-nav-ressources></app-nav-ressources>
+<!-- <app-nav-ressources></app-nav-ressources>-->
 
     <h1 *ngIf="ressources"><b>{{ressources[0].category}}</b> </h1>
-    <div class="container">
-      <div class="row" >
-        <div *ngFor="let ressource of ressources" >
-          <div  class="cards"  style="width: 18rem; height: 25rem;">
-            <div class="inner" (click)="detail(ressource.id)">
-              <img class="card-img-top" src="{{ressource.image}}">
-            </div>
-            <div class="card-body text-center">
-              <h4 class="card-title"><b>{{ressource.title}}</b></h4>
-              <a  class="btn btn-dark text-white">{{ressource.category}}</a>
-              <div><p class="card-text">{{ressource.description}}
-                <a href="{{ressource.link}}">{{ressource.link}}</a>
-              </p></div>
-              <a [routerLink]="['/detailRessource', ressource.id]">Read more >></a>
-            </div>
-          </div>
-        </div>
-      </div>
+
+  <div class="container">
+    <div class="cards" *ngIf="ressources">
+      <a class="card" *ngFor="let ressource of ressources">
+			<span class="card-header" style="background-image: url({{ressource.image}});">
+				<span class="card-title">
+					<h3>{{ressource.title}}</h3>
+				</span>
+			</span>
+        <span class="card-summary">
+<!--          <button  class="btn btn-dark text-white" (click)="lister(ressource.category)" >{{ressource.category}}</button>-->
+				<div>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</div>
+			</span>
+        <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
+			</span>
+      </a>
     </div>
   </div>
+  <div [hidden]="ressources">
+    <img class="load" src="assets/images/loader.gif" alt="">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
 

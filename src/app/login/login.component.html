@@ -21,7 +21,7 @@
     </label>
     <!--    <p class="forgot-pass">Forgot password?</p>-->
     <button type="button" class="submit"
-            [disabled]="loginFormulaire.invalid">
+            [routerLink]="['forum']" >
       Login</button>
     <!--    <button type="button" class="fb-btn">Connect with <span>facebook</span></button>-->
   </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="img__btn" (click)="open()">
         <span class="m--up">Register</span>
-        <span class="m--in">Login</span>
+        <span class="m--in" >Login</span>
       </div>
     </div>
 

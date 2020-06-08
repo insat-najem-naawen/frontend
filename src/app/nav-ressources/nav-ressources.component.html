@@ -1,23 +1,47 @@
 <!--nav-bar-->
-<nav>
-  <label class="logo" routerLink="/listeRessources">Ressources & services</label>
-  <ul>
-    <li>
-      <a><i class="fa fa-search" aria-hidden="true" (click)="openSearch()"></i>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<div id="myOverlay" class="overlay">
-  <span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>
-  <div class="overlay-content">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search"><i id="item1" class="fa fa-search"></i>
-    </form>
-    <h1>May we suggest</h1>
-    <h2 (click)="lister('formation')">#Formation</h2>
-    <h2 (click)="lister('documents')">#Documents</h2>
-
-  </div>
+<section id="nav-bar">
+<div class="dropdwn">
+  <nav>
+    <img class="titre" src="assets/images/title1.JPG" >
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About us</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a>Opportunities <i class="fa fa-angle-down"></i> </a>
+        <ul>
+          <li><a [routerLink]="['findJob']">Find job</a></li>
+          <li><a [routerLink]="['findInternship']">Find internship</a></li>
+          <li><a  [routerLink]="['postJob']">Post job opportunity</a></li>
+        </ul>
+      </li>
+      <li><a [routerLink]="['listeRessources']">Ressources</a></li>
+      <li><a href="#contact">Contact</a></li>
+<!--      <li>-->
+<!--        <a><i class="fa fa-search" aria-hidden="true" (click)="openSearch()"></i>-->
+<!--        </a>-->
+<!--      </li>-->
+      <li>
+        <a (click)="openLoginForm()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+      </li>
+      <li>
+        <a><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut  </a>
+      </li>
+    </ul>
+  </nav>
 </div>
+
+
+
+<!--<div id="myOverlay" class="overlay">-->
+<!--  <span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>-->
+<!--  <div class="overlay-content">-->
+<!--    <form>-->
+<!--      <input type="text" placeholder="Search.." name="search"><i id="item1" class="fa fa-search"></i>-->
+<!--    </form>-->
+<!--    <h1>May we suggest</h1>-->
+<!--    <h2 (click)="lister('formation')">#Formation</h2>-->
+<!--    <h2 (click)="lister('documents')">#Documents</h2>-->
+
+<!--  </div>-->
+<!--</div>-->
+</section>

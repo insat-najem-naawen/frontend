@@ -17,7 +17,7 @@ ressource: Ressource;
   ngOnInit(): void {
     const id = +this.activatedRoute.snapshot.params['id'];
     // console.log(id);
-    this.ressource = this.ressourcesService.getRessourcesById(id);
+    this.ressourcesService.getRessourcesById(id).subscribe((ressource) => this.ressource = ressource);
     console.log(this.ressource);
       }
   lister(category: string) {

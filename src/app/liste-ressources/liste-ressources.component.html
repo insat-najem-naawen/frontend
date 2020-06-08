@@ -1,61 +1,84 @@
 <div class="contenu">
-  <app-nav-ressources></app-nav-ressources>
-  <!--<body>-->
-  <!--&lt;!&ndash;slide&ndash;&gt;-->
+  <app-ressources></app-ressources>
 
-
-  <div class="hero-image">
-    <div class="hero-text">
-      <div class="hero">
-        <h2>A special ressource or service</h2>
-        <h3>Description<br>
-          descritpion<br>
-          description<br>
-          description<br>
-          description<br>
-          description<br>
-          link</h3>
-
-      </div>
-    </div>
-  </div>
-
-  <!--liste des ressources-->
   <div class="container">
-    <div class="row" >
-      <div class="column"  *ngFor="let ressource of ressources" >
-        <div   style="width: 20rem; height: 25rem;">
-          <div class="inner" (click)="detail(ressource.id)">
-            <img class="card-img-top" src="{{ressource.image}}">
+<body>
+    <section class="carousel" >
+      <a class="category" (click)="lister('formation')" >Formation</a>
+      <ul class="carousel-items" *ngIf="cRessources">
+        <li class="carousel-item" *ngFor="let ressource of cRessources">
+          <div class="card" style="width: 280px; height: 325px" [routerLink]="['/detailRessource', ressource.id]">
+		<span class="card-header" style="background-image: url({{ressource.image}});">
+				<span class="card-title">
+					<h3>{{ressource.title}}</h3>
+				</span>
+			</span>
+            <span class="card-summary">
+				<div>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</div>
+			</span>
+            <span class="card-meta">
+          <a class="read_more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
+			</span>
           </div>
-          <div class="card-body text-center">
-            <h4 class="card-title" (click)="detail(ressource.id)"><b>{{ressource.title}}</b></h4>
-            <button  class="btn btn-dark text-white" (click)="lister(ressource.category)" >{{ressource.category}}</button>
-            <div><p class="card-text">{{ressource.description}}
-              <a href="{{ressource.link}}">{{ressource.link}}</a>
-            </p></div>
-            <a [routerLink]="['/detailRessource', ressource.id]">Read more >></a>
-          </div>
-        </div>
-      </div>
+        </li>
+      </ul>
+    </section>
+    <div [hidden]="cRessources">
+      <img src="assets/images/loader.gif" alt="">
     </div>
+
+    <section class="carousel">
+      <a class="category" (click)="lister('documents')" >Documents</a>
+      <ul class="carousel-items" *ngIf="dRessources">
+        <li class="carousel-item" *ngFor="let ressource of dRessources">
+          <div class="card" style="width: 280px; height: 325px" [routerLink]="['/detailRessource', ressource.id]">
+            <span class="card-header" style="background-image: url({{ressource.image}});">
+				<span class="card-title">
+					<h3>{{ressource.title}}</h3>
+				</span>
+			</span>
+            <span class="card-summary">
+				<div>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</div>
+			</span>
+            <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
+			</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <div [hidden]="dRessources">
+      <img src="assets/images/loader.gif" alt="">
+    </div>
+
+    <section class="carousel">
+      <a class="category" (click)="lister('News')" >News</a>
+      <ul class="carousel-items" *ngIf="nRessources">
+        <li class="carousel-item" *ngFor="let ressource of nRessources">
+          <div class="card" style="width: 280px; height: 325px">
+            <span class="card-header" style="background-image: url({{ressource.image}});" [routerLink]="['/detailRessource', ressource.id]">
+				<span class="card-title">
+					<h3>{{ressource.title}}</h3>
+				</span>
+			</span>
+            <span class="card-summary">
+				<div>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</div>
+			</span>
+            <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
+			</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <div [hidden]="dRessources">
+      <img src="assets/images/loader.gif" alt="">
+    </div>
+</body>
   </div>
-
-  <!--pagination-->
-  <div class="pagination">
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
-  </div>
-
-
-
-
-  <!--</body>-->
-
 </div>
+
+
+
+

@@ -14,5 +14,12 @@ export class RessourcesComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  openSearch() {
+    document.getElementById('myOverlay').style.display = 'block';
+  }
+
+  closeSearch() {
+    document.getElementById('myOverlay').style.display = 'none';
+  }
 
 }

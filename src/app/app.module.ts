@@ -27,6 +27,7 @@ import { DetailRessourceComponent } from './detail-ressource/detail-ressource.co
 import { ListeRessourcesComponent } from './liste-ressources/liste-ressources.component';
 import { CategoryRessourcesComponent } from './category-ressources/category-ressources.component';
 import { NavRessourcesComponent } from './nav-ressources/nav-ressources.component';
+import { ForumComponent } from './forum/forum.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { NavRessourcesComponent } from './nav-ressources/nav-ressources.componen
   DetailRessourceComponent,
   ListeRessourcesComponent,
   CategoryRessourcesComponent,
-  NavRessourcesComponent
+  NavRessourcesComponent,
+  ForumComponent
   ],
   imports: [
     BrowserModule,

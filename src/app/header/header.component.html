@@ -1,59 +1,47 @@
-<!----------------------Navigation Bar--------------------->
+<!--nav-bar-->
 <section id="nav-bar">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">
-      <img src="assets/images/title1.JPG" alt="" class="titre">
-
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto" >
-        <li class="nav-item">
-          <a class="nav-link" href="#slider">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#team">Team</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opportunities</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" [routerLink]="['findJob']">Find job</a></li>
-            <li class="divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['findInternship']">Find internship</a></li>
-            <li class="divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['postJob']">Post job opportunity</a></li>
+  <div class="dropdwn">
+    <nav>
+      <img class="titre" src="assets/images/title1.JPG" routerLink="/">
+      <ul>
+        <li><a href="#"  >Home</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a>Opportunities<i class="fa fa-angle-down"></i> </a>
+          <ul>
+            <li><a [routerLink]="['findJob']">Find job</a></li>
+            <li><a [routerLink]="['findInternship']">Find internship</a></li>
+            <li><a  [routerLink]="['postJob']">Post job opportunity</a></li>
           </ul>
         </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link" routerLink="/ressources" role="button" aria-haspopup="true" aria-expanded="false">
-            Services & resources
-          </a>
-
-<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--            <li><a class="dropdown-item">Create CV</a></li>-->
-<!--            <li class="divider"></li>-->
-<!--            <li><a class="dropdown-item" href="#">Formation</a></li>-->
-<!--          </ul>-->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-
+        <li><a [routerLink]="['listeRessources']">Ressources</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!--      <li>-->
+        <!--        <a><i class="fa fa-search" aria-hidden="true" (click)="openSearch()"></i>-->
+        <!--        </a>-->
+        <!--      </li>-->
         <li>
-          <a class="nav-link"  (click)="openLoginForm()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+          <a (click)="openLoginForm()"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true"></i>
-            LogOut  </a>
+        <li>
+          <a><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut  </a>
         </li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
+
+
+
+  <!--<div id="myOverlay" class="overlay">-->
+  <!--  <span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>-->
+  <!--  <div class="overlay-content">-->
+  <!--    <form>-->
+  <!--      <input type="text" placeholder="Search.." name="search"><i id="item1" class="fa fa-search"></i>-->
+  <!--    </form>-->
+  <!--    <h1>May we suggest</h1>-->
+  <!--    <h2 (click)="lister('formation')">#Formation</h2>-->
+  <!--    <h2 (click)="lister('documents')">#Documents</h2>-->
+
+  <!--  </div>-->
+  <!--</div>-->
 </section>

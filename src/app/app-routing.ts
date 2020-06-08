@@ -10,6 +10,7 @@ import {RessourcesComponent} from './ressources/ressources.component';
 import {DetailRessourceComponent} from './detail-ressource/detail-ressource.component';
 import {ListeRessourcesComponent} from './liste-ressources/liste-ressources.component';
 import {CategoryRessourcesComponent} from './category-ressources/category-ressources.component';
+import {ForumComponent} from './forum/forum.component';
 
 
 
@@ -25,6 +26,7 @@ const APP_ROUTING: Routes = [
   {path: 'ressources', component: RessourcesComponent},
   {path: 'listeRessources', component: ListeRessourcesComponent},
   {path: 'detailRessource/:id', component: DetailRessourceComponent},
-  {path: 'ressources/:category', component: CategoryRessourcesComponent}
+  {path: 'ressources/:category', component: CategoryRessourcesComponent},
+  {path: 'forum', component: ForumComponent}
   ];
 export const ROUTING = RouterModule.forRoot(APP_ROUTING);

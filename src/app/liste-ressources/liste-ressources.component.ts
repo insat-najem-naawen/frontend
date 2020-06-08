@@ -10,11 +10,20 @@ import {Router} from '@angular/router';
 })
 export class ListeRessourcesComponent implements OnInit {
   ressources: Ressource[];
+  cRessources: Ressource[];
+  dRessources: Ressource[];
+  nRessources: Ressource[];
   constructor(private ressource: RessourcesService,
-              private router: Router) { }
+              private router: Router) {
+
+  }
 
   ngOnInit(): void {
-    this.ressources = this.ressource.getRessources();
+    this.ressource.getRessources().subscribe((ressources) => this.ressources = ressources);
+    this.ressource.getRessourcesByCategory('formation').subscribe(ressources => this.cRessources = ressources);
+    this.ressource.getRessourcesByCategory('documents').subscribe(ressources => this.dRessources = ressources);
+    this.ressource.getRessourcesByCategory('News').subscribe(ressources => this.nRessources = ressources);
+
   }
 
   detail(id: number) {

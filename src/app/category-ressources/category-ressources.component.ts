@@ -17,7 +17,7 @@ ressources: Ressource[];
   ngOnInit(): void {
     const category = this.activatedRoute.snapshot.params['category'];
     console.log(category);
-    this.ressources = this.ressourcesService.getRessourcesByCategory(String(category));
+    this.ressourcesService.getRessourcesByCategory(String(category)).subscribe(ressources => this.ressources = ressources);
     console.log(this.ressources);
   }
   detail(id: number) {

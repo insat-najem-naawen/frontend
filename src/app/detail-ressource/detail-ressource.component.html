@@ -1,18 +1,23 @@
 <div class="contenu">
-<app-nav-ressources></app-nav-ressources>
-
+<!--<app-nav-ressources></app-nav-ressources>-->
 
 
   <div *ngIf="ressource" id="cov"  style="width: 50rem;">
-    <button class="btn-dark text-white" (click)="lister(ressource.category)" >{{ressource.category}} </button>
-    <h4 class="card-title"><b>{{ressource.title}}</b></h4>
+    <button type="button" class="btn btn-dark" (click)="lister(ressource.category)">{{ressource.category}}</button>
+      <h4 class="card-title"><b>{{ressource.title}}</b></h4>
 
-    <img class="card-img-top" src="{{ressource.image}}" alt="Card image cap">
-    <div class="card-body">
-      <div class="card-text">{{ressource.description}}</div>
-      <a href="{{ressource.link}}">{{ressource.link}}</a>
-    </div>
+      <img class="card-img-top" src="{{ressource.image}}" alt="Card image cap">
+      <div class="card-body">
+        <div class="card-text">{{ressource.description}}</div>
+        <a href="{{ressource.link}}">{{ressource.link}}</a>
+      </div>
+      <div class="element2"></div>
   </div>
+
+  <div [hidden]="ressource">
+    <img class="load" src="assets/images/loader.gif" alt="">
+  </div>
+
 </div>
 
 
