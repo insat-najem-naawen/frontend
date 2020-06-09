@@ -1,62 +1,36 @@
-<div class="wrapper" >
+<head>
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+</head>
+<body>
+
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <div class="input-group" id="adv-search">
-        <input type="text" class="form-control" placeholder="Search for jobs" />
-        <div class="input-group-btn">
-          <div class="btn-group" role="group">
-            <div class="dropdown dropdown-lg">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <span class="caret"></span>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" role="menu">
-                <form class="form-horizontal" role="form">
-                  <div class="form-group">
-                   <label >Filter by</label>
-                    <select class="form-control">
-                      <option value="0" selected>Jobs by location</option>
-                      <option value="1">Tunisia</option>
-                      <option value="2">Europe</option>
-                      <option value="3">United States</option>
-                      <option value="4">Others</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label >Jobs by sector</label>
-                    <input class="form-control" type="text" />
-                  </div>
-                  <div class="form-group">
-                   <label >Jobs by company</label>
-                    <input class="form-control" type="text" />
-                  </div>
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form>
-              </div>
-            </div>
-            <button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </div>
-      </div>
+    <div class="col-lg-6 order-2 order-lg-1" >
+    <h1 class="ultra">Find your next job</h1>
+    <p class="lead">Where job seekers and employers connect.</p>
+    <div class="d-flex justify-content-center h-100">
+    <div class="search">
+      <input class="search_input" type="text" name="" placeholder="Search..">
+      <a  class="search_icon"><i class="fa fa-search"></i></a>
+    </div>
     </div>
   </div>
+    <div class="col-lg-6 order-1 order-lg-2"><img src="../assets/images/findjob.png" class="img-fluid"></div>
 </div>
-  <span id="formFooter">
-    <span>Are you a company ?</span>
-     <a [routerLink]="['postJob']" >
-      Post a job opportunity
-     </a>
-  </span>
 </div>
+
 
 <!--opportunities-->
 <div class="social-box">
   <div class="container">
+    <span id="formFooter">
+      <span>Are you a company ?</span>
+     <a [routerLink]="['postJob']"> Post an internship opportunity</a>
+  </span>
     <div class="row">
-
       <div class="col-lg-4 col-xs-12 text-center">
         <div class="box">
-          <i class="fa fa-behance fa-3x" style="color: mediumturquoise" aria-hidden="true"></i>
+          <i class="fa fa-behance fa-3x" style="color: #22427C" aria-hidden="true"></i>
           <div class="box-title">
             <h3>Behance</h3>
           </div>
@@ -71,7 +45,7 @@
 
       <div class="col-lg-4 col-xs-12  text-center">
         <div class="box">
-          <i class="fa fa-twitter fa-3x" style="color: mediumturquoise" aria-hidden="true"></i>
+          <i class="fa fa-twitter fa-3x" style="color: #22427C" aria-hidden="true"></i>
           <div class="box-title">
             <h3>Twitter</h3>
           </div>
@@ -86,7 +60,7 @@
 
       <div class="col-lg-4 col-xs-12 text-center">
         <div class="box">
-          <i class="fa fa-facebook fa-3x" style="color: mediumturquoise" aria-hidden="true"></i>
+          <i class="fa fa-facebook fa-3x" style="color: #22427C" aria-hidden="true"></i>
           <div class="box-title">
             <h3>Facebook</h3>
           </div>
@@ -101,7 +75,7 @@
 
       <div class="col-lg-4 col-xs-12 text-center">
         <div class="box">
-          <i class="fa fa-pinterest-p fa-3x" style="color: mediumturquoise" aria-hidden="true"></i>
+          <i class="fa fa-pinterest-p fa-3x" style="color: #22427C" aria-hidden="true"></i>
           <div class="box-title">
             <h3>Pinterest</h3>
           </div>
@@ -116,7 +90,7 @@
 
       <div class="col-lg-4 col-xs-12 text-center">
         <div class="box">
-          <i class="fa fa-google-plus fa-3x" style="color: mediumturquoise" aria-hidden="true"></i>
+          <i class="fa fa-google-plus fa-3x" style="color: #22427C" aria-hidden="true"></i>
           <div class="box-title">
             <h3>Google</h3>
           </div>
@@ -131,7 +105,7 @@
 
       <div class="col-lg-4 col-xs-12 text-center">
         <div class="box">
-          <i class="fa fa-github fa-3x" style="color: mediumturquoise" aria-hidden="true"></i>
+          <i class="fa fa-github fa-3x" style="color: #22427C" aria-hidden="true"></i>
           <div class="box-title">
             <h3>Github</h3>
           </div>
@@ -148,3 +122,26 @@
   </div>
 </div>
 <!--opportunities-->
+
+<!--pagination-->
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">«</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">»</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!--pagination-->
+</body>

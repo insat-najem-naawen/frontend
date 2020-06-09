@@ -1,0 +1,69 @@
+/*Section*/
+.container{
+  padding-top: 50px;
+}
+.container h1{
+  font-family: "PT Sans Narrow";
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 0.8;
+  margin-top: 90px;
+  color: #22427C;
+}
+.container .lead{
+  font-family: "PT Sans Narrow";
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.btn.btn-outline-primary{
+  color: #f5f5f5;
+  background-color: #22427C;
+  border-color: #22427C;
+  font-weight: bold;
+  font-size: larger;
+  outline: none;
+  margin: 20px 0px 0px 10px;
+}
+.btn.btn-outline-primary:hover{
+  color: #22427C;
+  background-color: #f5f5f5;
+  transform: translateY(-10px);
+}
+/*Section*/
+/***************************************/
+
+
+/*benefits*/
+.how-section1{
+  margin-top: -8%;
+  padding: 10%;
+}
+.how-section1 h4{
+  color: #ffa500;
+  font-weight: bold;
+  font-size: 30px;
+}
+.how-section1 .subheading{
+  color: #3931af;
+  font-size: 20px;
+}
+.how-section1 .row
+{
+  margin-top: 10%;
+}
+.how-img
+{
+  text-align: center;
+}
+.how-img img{
+  width: 40%;
+}
+/*benefits*/
+
+#footer {
+  background: #333;
+  color: #fff;
+  padding-top: 0;
+  padding-bottom: 10px;
+}
