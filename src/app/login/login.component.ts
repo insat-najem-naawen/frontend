@@ -7,7 +7,8 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+email: string;
+userId = 1;
   constructor(public dialog: MatDialog) { }
   ngOnInit(): void {
   }

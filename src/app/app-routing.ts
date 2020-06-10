@@ -11,6 +11,7 @@ import {DetailRessourceComponent} from './detail-ressource/detail-ressource.comp
 import {ListeRessourcesComponent} from './liste-ressources/liste-ressources.component';
 import {CategoryRessourcesComponent} from './category-ressources/category-ressources.component';
 import {ForumComponent} from './forum/forum.component';
+import {QuestionComponent} from './question/question.component';
 
 
 
@@ -27,6 +28,8 @@ const APP_ROUTING: Routes = [
   {path: 'listeRessources', component: ListeRessourcesComponent},
   {path: 'detailRessource/:id', component: DetailRessourceComponent},
   {path: 'ressources/:category', component: CategoryRessourcesComponent},
-  {path: 'forum', component: ForumComponent}
-  ];
+  {path: 'forum/:email', component: ForumComponent},
+  {path: 'question/:id/:email', component: QuestionComponent}
+
+];
 export const ROUTING = RouterModule.forRoot(APP_ROUTING);

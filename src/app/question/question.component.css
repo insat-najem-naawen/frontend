@@ -2,18 +2,7 @@ body{
   margin-top:20px;
   background:#eee;
 }
-.container{
-  height: 100%;
-  margin-top: 600px;
-  font-family: 'Nunito', sans-serif;
-}
 
-.box {
-  width: 58%;
-  margin-left: 255px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 .timeline {
   list-style-type: none;
   margin: 0;
@@ -35,9 +24,7 @@ body{
 .timeline>li {
   position: relative;
   min-height: 50px;
-  padding: 20px 0;
-  max-height: 200px;
-
+  padding: 20px 0
 }
 
 .timeline .timeline-time {
@@ -93,9 +80,7 @@ body{
   background: #fff;
   position: relative;
   padding: 20px 25px;
-  border : 1px solid;
   border-radius: 6px
-
 }
 
 .timeline .timeline-body:before {
@@ -105,7 +90,7 @@ body{
   border: 10px solid transparent;
   border-right-color: #fff;
   left: -20px;
-  top: -20px
+  top: 20px
 }
 
 .timeline .timeline-body>div+div {
@@ -114,7 +99,7 @@ body{
 
 .timeline .timeline-body>div+div:last-child {
   margin-bottom: -20px;
-  padding-bottom: 7px;
+  padding-bottom: 20px;
   border-radius: 0 0 6px 6px
 }
 
@@ -225,7 +210,8 @@ body{
   width: 34px;
   height: 34px;
   overflow: hidden;
-  border-radius: 30px
+  border-radius: 30px;
+  margin-top: -15px;
 }
 
 .timeline-comment-box .user img {
@@ -246,101 +232,4 @@ body{
 
 .text-danger, .text-red {
   color: #ff5b57!important;
-}
-
-.banner {
-  width: 80%;
-  height: 70%;
-  position: absolute;
-  top: 21%;
-  left: 150px;
-  color: #fff;
-}
-
-.app-text {
-  width: 50%;
-  float: left;
-  padding-left: 50px;
-}
-
-.app-text h3{
-  margin-top: 100px;
-  font-size: 17px;
-  color: #000;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.app-text h1 {
-  font-size: 51px;
-  position: relative;
-  color: #22427C;
-  margin-top: 30px;
-  font-weight: 700;
-  line-height: 1;
-
-}
-
-.app-text p {
-  font-size: 19px;
-  margin:  30px 30px 30px 0;
-  letter-spacing: 1px;
-  color: #000;
-  padding-right: 50px;
-}
-.btn-group {
-  display: flex;
-  width: 100%;
-  position: relative;
-}
-.btn-group .signup-btn {
-  cursor: pointer;
-  display: block;
-  color: #fff;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 700;
-  border-radius: 32px;
-  background-color: #22427C;
-  padding: 15px 50px;
-}
-
-.btn-group .play-btn {
-  margin-left: 40px;
-  display: inline-flex;
-}
-
-.play-btn-inner {
-  height: 50px;
-  width: 50px;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  background-color: #22427C;
-  margin-left: -30px;
-}
-.btn-group span {
-  color: #000;
-  font-size: 15px;
-  font-weight: 700;
-  margin:  auto 20px;
-  cursor: pointer;
-}
-
-.play-btn-inner i {
-  padding: 15px 19px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.app-picture img{
-  width: 50%;
-  height: 100%;
-}
-
-nav {
-  width: 65%;
-  margin-left: 215px;
-  margin-top: 100px;
-
 }

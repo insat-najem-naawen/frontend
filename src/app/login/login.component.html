@@ -5,6 +5,7 @@
       <span>Email</span>
       <input type="email"
              #inputMail="ngModel"
+             [(ngModel)]="email"
              required
              id="email"
              ngModel name="email"
@@ -21,7 +22,7 @@
     </label>
     <!--    <p class="forgot-pass">Forgot password?</p>-->
     <button type="button" class="submit"
-            [routerLink]="['forum']" >
+            [routerLink]="['forum',email]" >
       Login</button>
     <!--    <button type="button" class="fb-btn">Connect with <span>facebook</span></button>-->
   </div>

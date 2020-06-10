@@ -1,0 +1,122 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container" *ngIf="questions">
+<div class="banner">
+  <div class="app-text">
+    <h3>Have a question ?</h3>
+    <h1>Visit<br>our forum</h1>
+    <p>A forum is a place, situation, or group in which people exchange ideas and discuss issues,
+      especially important public issues. </p>
+
+    <div class="btn-group">
+
+      <div class="play-btn">
+        <div class="play-btn-inner">
+          <i class="fa fa-play"></i>
+        </div>
+        <span>How it works?</span>
+      </div>
+    </div>
+  </div>
+  <div class="app-picture">
+    <img src="assets/images/foum.jpg" alt="">
+  </div>
+</div>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Forum</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filter by category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Opportunities</a>
+            <a class="dropdown-item" href="#">News</a>
+            <a class="dropdown-item" href="#">Courses</a>
+            <a class="dropdown-item" href="#">Documents</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+<section id="questions">
+  <ul  class="timeline">
+    <li *ngFor="let question of questions">
+      <!-- begin timeline-time -->
+      <div class="timeline-time">
+        <span class="date">{{question.date}}</span>
+<!--        <span class="time">04:20</span>-->
+      </div>
+<!--       end timeline-time-->
+<!--       begin timeline-icon-->
+      <div class="timeline-icon">
+        <a href="javascript:;">&nbsp;</a>
+      </div>
+<!--       end timeline-icon -->
+<!--       begin timeline-body -->
+
+      <div class="timeline-body">
+        <div class="timeline-header">
+          <span class="userimage"><img src="{{question.image}}" alt=""></span>
+          <span class="username"><a href="javascript:;">{{question.author}}</a> <small></small></span>
+          <span class="pull-right text-muted">{{question.category}}</span>
+        </div>
+        <div class="timeline-content">
+          <p>
+            {{question.description}}
+          </p>
+        </div>
+        <div class="timeline-footer">
+          <a  class="m-r-15 text-inverse-lighter" [routerLink]="['/question', question.id, email]"><i class="fa fa-comments fa-fw fa-lg m-r-3" >
+
+          </i>Answers</a>
+        </div>
+
+
+      </div>
+      <!-- end timeline-body -->
+    </li>
+  </ul>
+</section>
+  <div id="box" class="box">
+    <span class="input-group-btn p-l-10">
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" (click)="afficher()">Ask a question</button>
+    </span>
+    <div  class="timeline-comment-box" [hidden]="show">
+
+      <div class="input">
+<!--        <div class="timeline-header">-->
+<!--          <span class="userimage"><img src="{{user.image}}" alt=""></span>-->
+<!--        </div>-->
+        <form novalidate [formGroup]="QuestionForm" #cform="ngForm" (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <textarea [(ngModel)]="NgQuestion"  formControlName="NgQuestion" type="text" class="form-control rounded-corner" placeholder="Write a question..." ></textarea>
+            <span class="input-group-btn p-l-10">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit" (click)="ajouter(NgQuestion)">Submit</button>
+                        </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div [hidden]="questions">
+  <img src="assets/images/loader.gif" alt="">
+</div>
+
+

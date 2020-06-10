@@ -8,7 +8,7 @@ import { delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RessourcesService {
-  private ressources: Ressource[];
+   ressources: Ressource[];
 
   constructor() {
     this.ressources = [ // tslint:disable-next-line:max-line-length no-unused-expression

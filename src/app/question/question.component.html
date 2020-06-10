@@ -1,0 +1,78 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container" *ngIf="question">
+  <ul class="timeline">
+    <li>
+      <!-- begin timeline-time -->
+      <div class="timeline-time">
+        <span class="date">{{question.date}}</span>
+        <!--        <span class="time">04:20</span>-->
+      </div>
+      <!--       end timeline-time-->
+      <!--       begin timeline-icon-->
+      <div class="timeline-icon">
+        <a href="javascript:;">&nbsp;</a>
+      </div>
+      <!--       end timeline-icon -->
+      <!--       begin timeline-body -->
+
+      <div class="timeline-body">
+        <div class="timeline-header">
+          <span class="userimage"><img src="{{question.image}}" alt=""></span>
+          <span class="username"><a href="javascript:;">{{question.author}}</a> <small></small></span>
+          <span class="pull-right text-muted">{{question.category}}</span>
+        </div>
+        <div class="timeline-content">
+          <p>
+            {{question.description}}
+          </p>
+        </div>
+        <div class="timeline-footer">
+          <a  class="m-r-15 text-inverse-lighter" [routerLink]="['/question', question.id]"><i class="fa fa-comments fa-fw fa-lg m-r-3" >
+
+          </i> Answers</a>
+        </div>
+
+        <div *ngFor="let answer of question.answers">
+        <div class="timeline-comment-box"  *ngIf="answer">
+          <div>
+
+            <div class="timeline-header" >
+              <span class="userimage" ><img src="{{answer.image}}" alt=""></span>
+              <span class="username" ><a href="javascript:;">{{answer.author}}</a></span>
+              <span class="pull-right text-muted">{{answer.date}}</span>
+              <div>{{answer.description}}</div>
+            </div>
+          </div>
+        </div>
+          <div [hidden]="answer">
+            <img src="assets/images/loader.gif" alt="">
+          </div>
+        </div>
+
+
+
+          <div  class="timeline-comment-box">
+            <div class="timeline-header">
+
+              <span class="userimage"><img src="{{user.image}}" alt=""></span>
+            </div>
+            <div class="input">
+
+              <form novalidate [formGroup]="AnswerForm" #cform="ngForm" (ngSubmit)="onSubmit()">
+                <div class="input-group">
+                  <textarea [(ngModel)]="NgAnswer"  formControlName="NgAnswer" type="text" class="form-control rounded-corner" placeholder="Write an answer..." ></textarea>
+                  <span class="input-group-btn p-l-10">
+                        <button class="btn btn-primary f-s-12 rounded-corner" type="submit" (click)="ajouter(NgAnswer)" >Answer</button>
+                        </span>
+                </div>
+              </form>
+            </div>
+          </div>
+
+<!--        </div>-->
+      </div>
+      <!-- end timeline-body -->
+    </li>
+  </ul>
+</div>
+

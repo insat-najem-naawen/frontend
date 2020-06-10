@@ -21,13 +21,14 @@ import { FindInternshipComponent } from './find-internship/find-internship.compo
 import { PostJobComponent } from './post-job/post-job.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RessourcesComponent } from './ressources/ressources.component';
 import { DetailRessourceComponent } from './detail-ressource/detail-ressource.component';
 import { ListeRessourcesComponent } from './liste-ressources/liste-ressources.component';
 import { CategoryRessourcesComponent } from './category-ressources/category-ressources.component';
 import { NavRessourcesComponent } from './nav-ressources/nav-ressources.component';
 import { ForumComponent } from './forum/forum.component';
+import { QuestionComponent } from './question/question.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,16 +52,18 @@ import { ForumComponent } from './forum/forum.component';
   ListeRessourcesComponent,
   CategoryRessourcesComponent,
   NavRessourcesComponent,
-  ForumComponent
+  ForumComponent,
+  QuestionComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    ROUTING,
-    BrowserAnimationsModule,
-    FormsModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        ROUTING,
+        BrowserAnimationsModule,
+        FormsModule,
+        MatDialogModule,
+        ReactiveFormsModule
+    ],
   entryComponents: [
     LoginComponent,
     RegisterComponent
