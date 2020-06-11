@@ -12,6 +12,7 @@ import {ListeRessourcesComponent} from './liste-ressources/liste-ressources.comp
 import {CategoryRessourcesComponent} from './category-ressources/category-ressources.component';
 import {ForumComponent} from './forum/forum.component';
 import {QuestionComponent} from './question/question.component';
+import {CreateCvComponent} from './create-cv/create-cv.component';
 
 
 
@@ -29,7 +30,8 @@ const APP_ROUTING: Routes = [
   {path: 'detailRessource/:id', component: DetailRessourceComponent},
   {path: 'ressources/:category', component: CategoryRessourcesComponent},
   {path: 'forum/:email', component: ForumComponent},
-  {path: 'question/:id/:email', component: QuestionComponent}
+  {path: 'question/:id/:email', component: QuestionComponent},
+  {path: 'findJob/createCV', component: CreateCvComponent}
 
 ];
 export const ROUTING = RouterModule.forRoot(APP_ROUTING);

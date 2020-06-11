@@ -58,6 +58,20 @@
   color:white;
   text-decoration:none;
 }
+#createCVbutton{
+  color: #f5f5f5;
+  background-color: #22427C;
+  border-color: #22427C;
+  font-weight: bold;
+  font-size: larger;
+  outline: none;
+  margin-left: 100px;
+}
+#createCVbutton:hover{
+  color: #22427C;
+  background-color: #f5f5f5;
+  transform: translateY(-10px);
+}
 #formFooter{
   margin-bottom: 20px;
   margin-left: 340px;

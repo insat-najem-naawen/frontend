@@ -29,6 +29,7 @@ import { CategoryRessourcesComponent } from './category-ressources/category-ress
 import { NavRessourcesComponent } from './nav-ressources/nav-ressources.component';
 import { ForumComponent } from './forum/forum.component';
 import { QuestionComponent } from './question/question.component';
+import { CreateCvComponent } from './create-cv/create-cv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { QuestionComponent } from './question/question.component';
   CategoryRessourcesComponent,
   NavRessourcesComponent,
   ForumComponent,
-  QuestionComponent
+  QuestionComponent,
+  CreateCvComponent
   ],
     imports: [
         BrowserModule,
