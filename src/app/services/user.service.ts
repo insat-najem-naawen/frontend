@@ -12,7 +12,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class UserService {
 users: User[];
-  constructor() {
+  link = 'http://127.0.0.1:8000/api/form/';
+
+  constructor(private http: HttpClient,
+              private processHTTPMsgService: ProcessHTTPMsgService) {
     this.users = [
       new User(1, 'Salma', 'Hellal', 'Salma', 'assets/images/salma.jpg', [], 'salmahellal98@gmail.com'),
       new User(2, 'Maissa', 'Garrab', 'Maissa', 'assets/images/maissa.jpg', [], 'maissagarrab@gmail.com'),
@@ -29,9 +32,9 @@ users: User[];
   getUserByEmail(email: string): Observable<User>  {
     return of (this.users.filter((user) => (user.email === email))[0]).pipe(delay(2000));
   }
-  putUser(user: User): void  {
-   this.users.push(user);
-  }
+  // putUser(user: User): void  {
+  //  this.users.push(user);
+  // }
   // getUsers(): Observable<User[]>  {
   //   return this.http.get<User[]>(baseURL + 'users').pipe(catchError(this.processHTTPMsgService.handleError));
   // }
@@ -49,6 +52,9 @@ users: User[];
   // getUserById(id: number): Observable<User>  {
   //   return this.http.get<User>(baseURL + 'users/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
   // }
+putUser(credentials): Observable<any> {
+    return this.http.post(this.link, credentials);
+}
 
 
 }
