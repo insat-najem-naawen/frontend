@@ -34,6 +34,7 @@ import { Slide1Component } from './slide1/slide1.component';
 import { Slide2Component } from './slide2/slide2.component';
 import { Slide3Component } from './slide3/slide3.component';
 import {baseURL} from './Model/baseURL';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,9 @@ import {baseURL} from './Model/baseURL';
         BrowserAnimationsModule,
         FormsModule,
         MatDialogModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+      HttpClientModule
+
     ],
   entryComponents: [
     LoginComponent,
