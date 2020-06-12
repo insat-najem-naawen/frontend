@@ -120,12 +120,11 @@ this.userService.getUsers().subscribe((users) => this.users = users,
     this.dialog.open(LoginComponent, {width: '1000px', height: '528px'} );
   }
 
-  ajoutUser(firstname: string, lastname: string, username: string, email: string) {
-     this.user = new User(0, firstname, lastname, username, '', [], email);
-     console.log(this.user);
-    this.userService.putUser(this.user);
-    console.log(this.users);
-
+  ajoutUser(credentials) {
+     // this.user = new User(0, firstname, lastname, username, '', [], email);
+     // console.log(this.user);
+    this.userService.putUser(credentials);
+    console.log(credentials);
   }
   close() {
     this.dialogRef.close();

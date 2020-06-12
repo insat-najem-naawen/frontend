@@ -70,7 +70,7 @@
     </label>
     <button class="submit" type="submit"
             [disabled]="RegisterForm.invalid"
-            (click)="ajoutUser(firstname, lastname, username, email)">Register</button>
+            (click)="ajoutUser(RegisterForm.value)">Register</button>
 <!--    <button  class="submit"  (click)="close()"> Cancel </button>-->
 
   </div>
