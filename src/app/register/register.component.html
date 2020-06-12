@@ -1,64 +1,94 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-header">Register</div>
-        <div class="card-body">
 
-          <form class="form-horizontal" method="post" action="#">
+<form novalidate class="cont" [formGroup]="RegisterForm" #rform= "ngForm" (ngSubmit)="onSubmitLogin()">
 
-            <div class="form-group">
-              <label for="name" class="cols-sm-2 control-label">Your Name</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email" class="cols-sm-2 control-label">Your Email</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="username" class="cols-sm-2 control-label">Username</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" />
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="password" class="cols-sm-2 control-label">Password</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" />
-                </div>
-              </div>
-            </div>
-            <div class="form-group ">
-              <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-            </div>
-          </form>
-        </div>
+  <div class="form sign-in" >
 
+    <h2>Time to feel like home,</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <label>
+          <span>Firstname</span>
+          <input type="text"
+                 formControlName="firstname"
+                 required
+                 id="firstname"
+                 [(ngModel)]="firstname"
+                 class="form-control"/>
+          <div *ngIf="formErrors.firstname">{{formErrors.firstname}}</div>
+
+        </label>
+        <label>
+          <span>Username</span>
+          <input type="text"
+                 formControlName="username"
+                 required
+                 id="userame"
+                 [(ngModel)]="username"
+                 class="form-control"/>
+          <div *ngIf="formErrors.username">{{formErrors.username}}</div>
+
+        </label>
+
+      </div>
+      <div class="col-md-6">
+        <label>
+          <span>Lastname</span>
+          <input type="text"
+                 formControlName="lastname"
+                 required
+                 id="lastname"
+                 [(ngModel)]="lastname"
+                 class="form-control"/>
+          <div *ngIf="formErrors.lastname">{{formErrors.lastname}}</div>
+
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email"
+                 formControlName="email"
+                 required
+                 id="email"
+                 [(ngModel)]="email"
+                 class="form-control"/>
+          <div *ngIf="formErrors.email">{{formErrors.email}}</div>
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <label>
+      <span>Password</span>
+      <input type="password"
+             formControlName="password"
+             required
+             id="password"
+             [(ngModel)]="password"/>
+      <div *ngIf="formErrors.password">{{formErrors.password}}</div>
+
+    </label>
+    <button class="submit" type="submit"
+            [disabled]="RegisterForm.invalid"
+            (click)="ajoutUser(firstname, lastname, username, email)">Register</button>
+<!--    <button  class="submit"  (click)="close()"> Cancel </button>-->
+
+  </div>
+
+
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New here?</h2>
+        <p>Sign up and discover great amount of new opportunities!</p>
+      </div>
+      <div class="img__btn" (click)="openLoginForm()">
+        <span class="m--up" >Login</span>
+        <!--        <span class="m&#45;&#45;in" >Login</span>-->
       </div>
     </div>
   </div>
-</div>
+</form>
+
+
+
