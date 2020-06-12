@@ -83,7 +83,7 @@
   float: left;
   width: 20%;
   padding: 15px;
-  background: #ddd;
+  background: #fff;
   font-size: 17px;
   border: none;
   cursor: pointer;
@@ -135,7 +135,7 @@ body{
 nav{
   height: 60px;
   background: white;
-  box-shadow: 0 10px 15px rgba(0,0,0,.1);
+  /*box-shadow: 0 10px 15px rgba(0,0,0,.1);*/
 }
 /*.logo{*/
 /*  padding: 5px 0 0 80px;*/
@@ -150,7 +150,7 @@ nav ul{
   margin-right: 30px;
 }
 nav ul li{
-  background: #f8f9fa;
+  background: #FFFFFF;
   position: relative;
   list-style: none;
   display: inline-block;

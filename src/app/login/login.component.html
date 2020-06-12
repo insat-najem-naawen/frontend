@@ -25,9 +25,9 @@
       <div *ngIf="formErrors.password">{{formErrors.password}}</div>
     </label>
 
-
+<!--    (click)="login(LoginForm.value)"-->
     <button type="submit" class="submit"
-            [routerLink]="['forum',email]" [disabled]="LoginForm.invalid">Login</button>
+            [routerLink]="['forum',email]" [disabled]="LoginForm.invalid" >Login</button>
 <!--    <button  class="submit"  (click)="close()"> Cancel </button>-->
 
     <!--    <button type="button" class="fb-btn">Connect with <span>facebook</span></button>-->

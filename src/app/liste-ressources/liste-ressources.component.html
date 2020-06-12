@@ -23,7 +23,7 @@
         </li>
       </ul>
     </section>
-    <div [hidden]="cRessources">
+    <div [hidden]="cRessources || errMess">
       <img src="assets/images/loader.gif" alt="">
     </div>
 
@@ -48,7 +48,7 @@
       </ul>
     </section>
 
-    <div [hidden]="dRessources">
+    <div [hidden]="dRessources || errMess">
       <img src="assets/images/loader.gif" alt="">
     </div>
 
@@ -72,7 +72,7 @@
         </li>
       </ul>
     </section>
-    <div [hidden]="dRessources">
+    <div [hidden]="dRessources || errMess">
       <img src="assets/images/loader.gif" alt="">
     </div>
 </body>

@@ -4,32 +4,32 @@
 
 
 #item1{
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url(slider.jpg);
+  /*background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url(slider.jpg);*/
   background-size: cover;
   background-position: center;
   color: #efefef!important;
   background-attachment: fixed;
   padding-top: 50px;
-  padding-bottom: 550px;
+  padding-bottom: 100px;
 }
 
 #item2{
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url(sliderr.png);
+  /*background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url(sliderr.png);*/
   background-size: cover;
   background-position: center;
   color: #efefef!important;
   background-attachment: fixed;
   padding-top: 50px;
-  padding-bottom: 550px;
+  padding-bottom: 100px;
 }
 #item3{
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url(slider2.jpg);
+  /*background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url(slider2.jpg);*/
   background-size: cover;
   background-position: center;
   color: #efefef!important;
   background-attachment: fixed;
-  padding-top: 50px;
-  padding-bottom: 550px;
+  padding-top: 0px;
+  padding-bottom: 100px;
 }
 
 .carousel-caption {

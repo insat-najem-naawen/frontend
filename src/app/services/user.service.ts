@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import {User} from '../Model/user';
 import {Observable, of} from 'rxjs';
 import {Question} from '../Model/question';
-import {delay} from 'rxjs/operators';
+import {catchError, delay} from 'rxjs/operators';
+import {baseURL} from '../Model/baseURL';
+import {ProcessHTTPMsgService} from './process-httpmsg.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +29,26 @@ users: User[];
   getUserByEmail(email: string): Observable<User>  {
     return of (this.users.filter((user) => (user.email === email))[0]).pipe(delay(2000));
   }
+  putUser(user: User): void  {
+   this.users.push(user);
+  }
+  // getUsers(): Observable<User[]>  {
+  //   return this.http.get<User[]>(baseURL + 'users').pipe(catchError(this.processHTTPMsgService.handleError));
+  // }
+
+  // putUser(user: User): Observable<User> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json'
+  //     })
+  //   };
+  //   return this.http.put<User>(baseURL + 'users/' + user.id, user, httpOptions)
+  //     .pipe(catchError(this.processHTTPMsgService.handleError));
+  // }
+
+  // getUserById(id: number): Observable<User>  {
+  //   return this.http.get<User>(baseURL + 'users/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
+  // }
+
+
 }

@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import {Ressource} from '../Model/ressource';
 import {Observable} from 'rxjs';
 import { of } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import {catchError, delay} from 'rxjs/operators';
+import {ProcessHTTPMsgService} from './process-httpmsg.service';
+import {HttpClient} from '@angular/common/http';
+import {baseURL} from '../Model/baseURL';
 
 @Injectable({
   providedIn: 'root'
@@ -197,4 +200,15 @@ export class RessourcesService {
   getRessourcesByCategory(category: string): Observable<Ressource[]> {
     return of(this.ressources.filter((ressource) => (ressource.category === category))).pipe(delay(2000));
 }
+
+
+  // getRessources(): Observable<Ressource[]>  {
+  //   return this.http.get<Ressource[]>(baseURL + 'dishes').pipe(catchError(this.processHTTPMsgService.handleError));
+  // // }
+  // getRessourcesById(id: number): Observable<Ressource>  {
+  //   return this.http.get<Ressource>(baseURL + 'ressources/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
+  // }
+  // getRessourcesByCategory(category: string): Observable<Ressource[]> {
+  //   return this.http.get<Ressource>(baseURL + 'ressources/' + category).pipe(catchError(this.processHTTPMsgService.handleError));
+  // }
 }

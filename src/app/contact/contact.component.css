@@ -7,7 +7,7 @@ h1{
 }
 h1::after{
   content: '';
-  background: #007bff;
+  background: #22427C;
   display: block;
   height: 3px;
   width: 170px;
@@ -43,6 +43,13 @@ h1::after{
 
 .contact-info .fas,.contact-info .fab {
   margin: 10px;
-  color: #007bff;
+  color: #22427C;
   font-weight: bold;
+}
+button {
+  background: #22427C;
+  color: white;
+}
+i{
+  color: #22427C;
 }

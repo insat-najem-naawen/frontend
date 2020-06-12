@@ -1,0 +1,23 @@
+.container{
+  padding : 50px 0px 0px 0px;
+}
+
+.container h1{
+  font-family: "PT Sans Narrow";
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 1;
+  margin: 60px 0px 0px 40px;
+  color: #22427C;
+}
+.container .lead{
+  font-family: "PT Sans Narrow";
+  font-size: 25px;
+  line-height: 1.1;
+  margin: 10px 0px 0px 43px;
+  color: #0d0d0d;
+}
+
+img{
+  margin-top: -20px;
+}

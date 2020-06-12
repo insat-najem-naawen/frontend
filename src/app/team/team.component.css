@@ -13,7 +13,7 @@ h1{
 }
 h1::after{
   content: '';
-  background: #007bff;
+  background: #22427C;
   display: block;
   height: 3px;
   width: 170px;
@@ -40,18 +40,18 @@ h1::after{
   font-size: 22px;
   font-weight: bold;
   margin-top: 15px;
-  color: #007bff;
+  color: #22427C;
 }
 .prof-pic h3 {
   font-size: 15px;
   font-weight: bold;
   margin-top: 15px;
-  color: #007bff!important;
+  color: #22427C!important;
 }
 #team .fab {
 height: 25px;
   width:25px;
-  color:#007bff!important;
+  color:#22427C!important;
   background: #ffffff;
   padding: 4px;
   border-radius: 50%;
@@ -79,4 +79,7 @@ padding: 15px 0;
 .img-box ul, .img-box ul li {
 transition: 0.5s;
 
+}
+i{
+  color: #22427C;
 }

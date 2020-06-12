@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Ressource} from '../Model/ressource';
 import {RessourcesService} from '../services/ressources.service';
 import {Router} from '@angular/router';
@@ -13,16 +13,22 @@ export class ListeRessourcesComponent implements OnInit {
   cRessources: Ressource[];
   dRessources: Ressource[];
   nRessources: Ressource[];
+  errMess: string;
   constructor(private ressource: RessourcesService,
-              private router: Router) {
+              private router: Router,
+              @Inject('BaseURL') private BaseURL) {
 
   }
 
   ngOnInit(): void {
-    this.ressource.getRessources().subscribe((ressources) => this.ressources = ressources);
-    this.ressource.getRessourcesByCategory('formation').subscribe(ressources => this.cRessources = ressources);
-    this.ressource.getRessourcesByCategory('documents').subscribe(ressources => this.dRessources = ressources);
-    this.ressource.getRessourcesByCategory('News').subscribe(ressources => this.nRessources = ressources);
+    this.ressource.getRessources().subscribe((ressources) => this.ressources = ressources,
+      errmess => this.errMess = <any>errmess);
+    this.ressource.getRessourcesByCategory('formation').subscribe(ressources => this.cRessources = ressources,
+      errmess => this.errMess = <any>errmess);
+    this.ressource.getRessourcesByCategory('documents').subscribe(ressources => this.dRessources = ressources,
+      errmess => this.errMess = <any>errmess);
+    this.ressource.getRessourcesByCategory('News').subscribe(ressources => this.nRessources = ressources,
+      errmess => this.errMess = <any>errmess);
 
   }
 

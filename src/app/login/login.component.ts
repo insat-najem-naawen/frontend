@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegisterComponent} from '../register/register.component';
@@ -52,7 +52,8 @@ userId = 1;
 
   constructor(public dialog: MatDialog,
               private fb: FormBuilder,
-              public dialogRef: MatDialogRef<LoginComponent>) {
+              public dialogRef: MatDialogRef<LoginComponent>,
+              @Inject('BaseURL') private BaseURL) {
     this.createForm();
   }
   ngOnInit(): void {
@@ -115,5 +116,21 @@ this.dialogRef.close();
   close() {
     this.dialogRef.close();
   }
+
+
+  // login(credentials) {
+  //   console.log(credentials);
+  //   this.authentication.login(credentials).subscribe(
+  //     (response) => {
+  //       const token = response.id;
+  //       const link = ['cv'];
+  //       localStorage.setItem('token', token);
+  //       this.router.navigate(link);
+  //     },
+  //     (error) => {
+  //       console.log(error,`erreur`);
+  //     }
+  //   );
+  // }
 
   }

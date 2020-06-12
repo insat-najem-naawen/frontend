@@ -22,6 +22,7 @@ email: string;
 NgQuestion: string;
 userId = 1;
 question: Question;
+errMess: string;
 
 @ViewChild('cform') QuestionFormDirective;
 
@@ -42,7 +43,8 @@ question: Question;
   ngOnInit(): void {
     this.email = this.activatedRoute.snapshot.params['email'];
     console.log(this.email);
-    this.userService.getUserByEmail(this.email).subscribe((user) => this.user = user);
+    this.userService.getUserByEmail(this.email).subscribe((user) => this.user = user,
+      errmess => this.errMess = <any>errmess);
     // console.log(this.user);
 
   }

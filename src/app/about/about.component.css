@@ -1,28 +1,92 @@
-#about {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  color: #555;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#about .btn {
-  margin-top: 20px;
-  margin-bottom: 30px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.about-content {
-  padding-top: 20px;
+body {
+  font-family: "roboto";
+  color: #fff;
+
 }
 
-.opportunities p {
-  margin-bottom: 6px;
+section {
+  height: 100%;
+  padding: 2em 0;
+}
+
+.section1 {
+  background : #22427C;
+  clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
+  padding-bottom: 5%;
+}
+
+.section2 {
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2em;
+  color: #FFFFFF;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+  color: #FFFFFF;
+}
+
+.img-wrapper {
+  width: 50%;
+}
+
+.img{
+  /*width: 10%;*/
+  /*height: 10%;*/
+  /*!*background: ;*!*/
+margin-left: -50px;
+  position: center;
+}
+
+.text-wrapper{
+  width: 50%;
+
+}
+
+.text {
+  margin-bottom: 1em;
+}
+
+.btn-wrapper {
+  margin-top: 2em;
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid #fff;
+  padding: 0.5em 2em;
+  font-size: 1.1em;
   font-weight: 600;
+  transition: all 0.2s ease-in-out;
 }
 
-.progress-bar {
-  border-radius: 16px;
+.btn:hover {
+  background-color: #fff;
+  color: #22427C;
 }
 
-.progress {
-  border-radius: 16px!important;
-  margin-bottom: 20px;
-}
+
+
+

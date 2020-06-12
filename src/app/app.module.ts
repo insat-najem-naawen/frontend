@@ -30,6 +30,10 @@ import { NavRessourcesComponent } from './nav-ressources/nav-ressources.componen
 import { ForumComponent } from './forum/forum.component';
 import { QuestionComponent } from './question/question.component';
 import { CreateCvComponent } from './create-cv/create-cv.component';
+import { Slide1Component } from './slide1/slide1.component';
+import { Slide2Component } from './slide2/slide2.component';
+import { Slide3Component } from './slide3/slide3.component';
+import {baseURL} from './Model/baseURL';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +59,10 @@ import { CreateCvComponent } from './create-cv/create-cv.component';
   NavRessourcesComponent,
   ForumComponent,
   QuestionComponent,
-  CreateCvComponent
+  CreateCvComponent,
+  Slide1Component,
+  Slide2Component,
+  Slide3Component
   ],
     imports: [
         BrowserModule,
@@ -70,7 +77,10 @@ import { CreateCvComponent } from './create-cv/create-cv.component';
     LoginComponent,
     RegisterComponent
   ],
-  providers: [],
+  providers: [
+    {provide: 'BaseURL', useValue: baseURL}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

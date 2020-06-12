@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   lastname: string;
   username: string;
   password: string;
+  errMess: string;
   RegisterForm: FormGroup;
   users: User[];
   user: User;
@@ -57,7 +58,8 @@ export class RegisterComponent implements OnInit {
              private userService: UserService,
               public dialogRef: MatDialogRef<RegisterComponent>) {
     this.createForm();
-this.userService.getUsers().subscribe((users) => this.users = users);
+this.userService.getUsers().subscribe((users) => this.users = users,
+  errmess => this.errMess = <any>errmess);
   }
 
   ngOnInit(): void {
@@ -121,7 +123,7 @@ this.userService.getUsers().subscribe((users) => this.users = users);
   ajoutUser(firstname: string, lastname: string, username: string, email: string) {
      this.user = new User(0, firstname, lastname, username, '', [], email);
      console.log(this.user);
-    this.users.push(this.user);
+    this.userService.putUser(this.user);
     console.log(this.users);
 
   }
