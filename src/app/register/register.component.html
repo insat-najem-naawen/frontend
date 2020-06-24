@@ -9,12 +9,12 @@
         <label>
           <span>Firstname</span>
           <input type="text"
-                 formControlName="firstname"
+                 formControlName="firstName"
                  required
-                 id="firstname"
-                 [(ngModel)]="firstname"
+                 id="firstName"
+                 [(ngModel)]="first_name"
                  class="form-control"/>
-          <div *ngIf="formErrors.firstname">{{formErrors.firstname}}</div>
+          <div *ngIf="formErrors.firstName">{{formErrors.firstName}}</div>
 
         </label>
         <label>
@@ -34,12 +34,12 @@
         <label>
           <span>Lastname</span>
           <input type="text"
-                 formControlName="lastname"
+                 formControlName="lastName"
                  required
-                 id="lastname"
-                 [(ngModel)]="lastname"
+                 id="last_name"
+                 [(ngModel)]="lastName"
                  class="form-control"/>
-          <div *ngIf="formErrors.lastname">{{formErrors.lastname}}</div>
+          <div *ngIf="formErrors.lastName">{{formErrors.lastName}}</div>
 
         </label>
         <label>

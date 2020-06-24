@@ -2,8 +2,8 @@ import {Answer} from './answer';
 
 export class User {
   id: number;
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   username: string;
   email: string;
   image: string;
@@ -11,11 +11,11 @@ export class User {
   answers: Answer[];
 
 
-  constructor(id= 0, firstname= '', lastname= '', username= '', image= '', answers, email = ''
+  constructor(id= 0, first_name= '', last_name= '', username= '', image= '', answers, email = ''
   , password = '') {
     this.id = id;
-    this.firstname = firstname;
-    this.lastname = lastname;
+    this.firstName = first_name;
+    this.lastName = last_name;
     this.username = username;
     this.image = image;
     this.answers = answers;

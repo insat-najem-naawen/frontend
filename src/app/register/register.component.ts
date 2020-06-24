@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {LoginComponent} from '../login/login.component';
 import {User} from '../Model/user';
@@ -12,8 +12,8 @@ import {UserService} from '../services/user.service';
 })
 export class RegisterComponent implements OnInit {
   email: string;
-  firstname: string;
-  lastname: string;
+  first_name: string;
+  last_name: string;
   username: string;
   password: string;
   errMess: string;
@@ -22,19 +22,19 @@ export class RegisterComponent implements OnInit {
   user: User;
   @ViewChild('rform') RegisterFormDirective;
   formErrors = {
-    'firstname': '',
-    'lastname': '',
+    'firstName': '',
+    'lastName': '',
     'email': '',
     'username': '',
     'password': ''
   };
   validationMessages = {
-    'firstname': {
+    'firstName': {
       'required': 'First name required.',
       'minlength': 'at least 2 charachters.',
       'maxlength': 'max length 25.'
     },
-    'lastname': {
+    'lastName': {
       'required': 'Last name required.',
       'minlength': 'at least 2 charachters.',
       'maxlength': 'max length 25.'
@@ -67,8 +67,8 @@ this.userService.getUsers().subscribe((users) => this.users = users,
 
   createForm() {
     this.RegisterForm = this.fb.group({
-      firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-      lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       username: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -101,10 +101,10 @@ this.userService.getUsers().subscribe((users) => this.users = users,
   }
 
   onSubmitLogin() {
-    console.log(this.RegisterForm.value);
+    // console.log(this.RegisterForm.value);
     this.RegisterForm.reset({
-      firstname: '',
-      lastname: '',
+      firstName: '',
+      lastName: '',
       email: '',
       username: '',
       password: ''
@@ -121,10 +121,22 @@ this.userService.getUsers().subscribe((users) => this.users = users,
   }
 
   ajoutUser(credentials) {
-     // this.user = new User(0, firstname, lastname, username, '', [], email);
-     // console.log(this.user);
-    this.userService.putUser(credentials);
-    console.log(credentials);
+     // this.user = new User(5, first_name, last_name, username,'',[''], email, password);
+     console.log(credentials);
+    // console.log(user);
+    console.log(typeof (credentials));
+    this.userService.postUser(credentials).subscribe((response) => {
+      console.log('salma');
+        console.log('response', response);
+      },
+      (error) => {
+        console.log('erreur', error);
+        console.log(typeof (credentials));
+        console.log(credentials);
+      },
+      () => {
+        console.log('complete :>');
+      });
   }
   close() {
     this.dialogRef.close();

@@ -35,6 +35,7 @@ import { Slide2Component } from './slide2/slide2.component';
 import { Slide3Component } from './slide3/slide3.component';
 import {baseURL} from './Model/baseURL';
 import {HttpClientModule} from '@angular/common/http';
+import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +82,8 @@ import {HttpClientModule} from '@angular/common/http';
     RegisterComponent
   ],
   providers: [
-    {provide: 'BaseURL', useValue: baseURL}
+    {provide: 'BaseURL', useValue: baseURL},
+    ProcessHTTPMsgService
 
   ],
   bootstrap: [AppComponent]
