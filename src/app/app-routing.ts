@@ -13,14 +13,16 @@ import {CategoryRessourcesComponent} from './category-ressources/category-ressou
 import {ForumComponent} from './forum/forum.component';
 import {QuestionComponent} from './question/question.component';
 import {CreateCvComponent} from './create-cv/create-cv.component';
-import {LoginGuard} from './Guard/login.guard';
+import {CvFormComponent} from './cv-form/cv-form.component';
+import {PostFormComponent} from './post-form/post-form.component';
+import {DetailJobComponent} from './detail-job/detail-job.component';
 
 
 
 const APP_ROUTING: Routes = [
   {path: '', component: HomepageComponent},
-  {path: 'login', component: LoginComponent,  canActivate : [LoginGuard]},
-  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'login/register', component: RegisterComponent},
   {path: 'opportunities', component: OpportunitiesComponent},
   {path: 'findJob', component: FindJobComponent},
   {path: 'postJob', component: PostJobComponent},
@@ -32,7 +34,10 @@ const APP_ROUTING: Routes = [
   {path: 'ressources/:category', component: CategoryRessourcesComponent},
   {path: 'forum/:email', component: ForumComponent},
   {path: 'question/:id/:email', component: QuestionComponent},
-  {path: 'findJob/createCV', component: CreateCvComponent}
-
+  {path: 'findJob/createCV', component: CreateCvComponent},
+  {path: 'findJob/createCV/cvForm', component: CvFormComponent},
+  {path: 'findJob/createCV/cvForm/createCV', component: CreateCvComponent},
+  {path: 'postJob/postForm', component: PostFormComponent},
+  {path: 'findJob/detailJob/:id', component: DetailJobComponent}
 ];
 export const ROUTING = RouterModule.forRoot(APP_ROUTING);

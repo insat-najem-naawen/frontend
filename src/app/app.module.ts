@@ -36,8 +36,9 @@ import { Slide3Component } from './slide3/slide3.component';
 import {baseURL} from './Model/baseURL';
 import {HttpClientModule} from '@angular/common/http';
 import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
-import {LoginInterceptorProvider} from './Interceptors/loginInterceptor';
-import {LoginGuard} from './Guard/login.guard';
+import { CvFormComponent } from './cv-form/cv-form.component';
+import { PostFormComponent } from './post-form/post-form.component';
+import { DetailJobComponent } from './detail-job/detail-job.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,10 @@ import {LoginGuard} from './Guard/login.guard';
   CreateCvComponent,
   Slide1Component,
   Slide2Component,
-  Slide3Component
+  Slide3Component,
+  CvFormComponent,
+  PostFormComponent,
+  DetailJobComponent
   ],
     imports: [
         BrowserModule,
@@ -85,9 +89,7 @@ import {LoginGuard} from './Guard/login.guard';
   ],
   providers: [
     {provide: 'BaseURL', useValue: baseURL},
-    ProcessHTTPMsgService,
-    LoginInterceptorProvider,
-    LoginGuard
+    ProcessHTTPMsgService
 
   ],
   bootstrap: [AppComponent]
