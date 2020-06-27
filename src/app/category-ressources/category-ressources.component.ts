@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {Ressource} from '../Model/ressource';
 import {RessourcesService} from '../services/ressources.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {expand, flyInOut, visibility} from '../animations/app.animation';
 
 @Component({
   selector: 'app-category-ressources',
   templateUrl: './category-ressources.component.html',
-  styleUrls: ['./category-ressources.component.css']
+  styleUrls: ['./category-ressources.component.css'],
+  animations: [flyInOut(), visibility(), expand()]
 })
 export class CategoryRessourcesComponent implements OnInit {
 ressources: Ressource[];

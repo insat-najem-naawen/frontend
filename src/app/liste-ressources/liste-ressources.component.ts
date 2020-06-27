@@ -2,11 +2,17 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {Ressource} from '../Model/ressource';
 import {RessourcesService} from '../services/ressources.service';
 import {Router} from '@angular/router';
+import {expand, flyInOut, visibility} from '../animations/app.animation';
 
 @Component({
   selector: 'app-liste-ressources',
   templateUrl: './liste-ressources.component.html',
-  styleUrls: ['./liste-ressources.component.css']
+  styleUrls: ['./liste-ressources.component.css'],
+  host: {
+    // '[@flyInOut]': 'true',
+    // 'style': 'display:block;'
+  },
+  animations: [flyInOut(), visibility(), expand()]
 })
 export class ListeRessourcesComponent implements OnInit {
   ressources: Ressource[];

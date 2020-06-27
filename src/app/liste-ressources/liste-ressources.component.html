@@ -1,79 +1,226 @@
 <div class="contenu">
-  <app-ressources></app-ressources>
 
   <div class="container">
-<body>
-    <section class="carousel" >
-      <a class="category" (click)="lister('formation')" >Formation</a>
-      <ul class="carousel-items" *ngIf="cRessources">
-        <li class="carousel-item" *ngFor="let ressource of cRessources">
-          <div class="card" style="width: 280px; height: 325px" [routerLink]="['/detailRessource', ressource.id]">
-		<span class="card-header" style="background-image: url({{ressource.image}});">
-				<span class="card-title">
-					<h3>{{ressource.title}}</h3>
-				</span>
-			</span>
-            <span class="card-summary">
-				<div>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</div>
-			</span>
-            <span class="card-meta">
-          <a class="read_more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
-			</span>
+
+    <div class="banner" [@flyInOut]>
+      <div class="app-text">
+        <h3>Searching for services ?</h3>
+        <h1>Ressources and Services<br></h1>
+        <p>You'll find news, documents, services and many other ressources</p>
+        <div class="d-flex justify-content-center h-100">
+          <div class="search">
+            <input class="search_input" type="text" name="" placeholder="Search..">
+            <a  class="search_icon"><i class="fa fa-search"></i></a>
           </div>
-        </li>
-      </ul>
+        </div>
+
+      </div>
+      <div class="app-picture">
+        <img src="assets/images/res.jpg" alt="">
+      </div>
+    </div>
+
+    <body>
+    <section>
+      <span [@expand] class="category" >Formation</span>
+      <a [@expand] class="view1" (click)="lister('formation')">View all</a>
+
+      <div [@expand] class="cards" *ngIf="cRessources">
+        <a class="card" style="width: 250px; height: 350px" *ngIf="cRessources[0]">
+				    <span class="card-header" style="background-image: url({{cRessources[0].image}});" [routerLink]="['/detailRessource', cRessources[0].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{cRessources[0].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', cRessources[0].id]">Read more</a>
+			</span>
+        </a>
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="cRessources[1]">
+				    <span class="card-header" style="background-image: url({{cRessources[1].image}});" [routerLink]="['/detailRessource', cRessources[1].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{cRessources[1].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', cRessources[1].id]">Read more</a>
+			</span>
+        </a>
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="cRessources[2]">
+				    <span class="card-header" style="background-image: url({{cRessources[2].image}});" [routerLink]="['/detailRessource', cRessources[2].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{cRessources[2].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', cRessources[2].id]">Read more</a>
+			</span>
+        </a>
+
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="cRessources[3]">
+				    <span class="card-header" style="background-image: url({{cRessources[3].image}});" [routerLink]="['/detailRessource', cRessources[3].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{cRessources[3].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', cRessources[3].id]">Read more</a>
+			</span>
+        </a>
+
+
+
+      </div>
+
     </section>
+
     <div [hidden]="cRessources || errMess">
-      <img src="assets/images/loader.gif" alt="">
+      <!--      <img src="assets/images/loader.gif" alt="">-->
     </div>
 
-    <section class="carousel">
-      <a class="category" (click)="lister('documents')" >Documents</a>
-      <ul class="carousel-items" *ngIf="dRessources">
-        <li class="carousel-item" *ngFor="let ressource of dRessources">
-          <div class="card" style="width: 280px; height: 325px" [routerLink]="['/detailRessource', ressource.id]">
-            <span class="card-header" style="background-image: url({{ressource.image}});">
-				<span class="card-title">
-					<h3>{{ressource.title}}</h3>
-				</span>
+
+
+
+
+    <section>
+      <span [@expand] class="category">Documents</span>
+      <a [@expand] class="view2" (click)="lister('documents')">View all</a>
+
+      <div [@expand] class="cards" *ngIf="dRessources">
+        <a class="card" style="width: 250px; height: 350px" *ngIf="dRessources[0]">
+				    <span class="card-header" style="background-image: url({{dRessources[0].image}});" [routerLink]="['/detailRessource', dRessources[0].id]">
+
 			</span>
-            <span class="card-summary">
-				<div>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</div>
+          <span class="card-summary">
+              					<h2>{{dRessources[0].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
 			</span>
-            <span class="card-meta">
-          <a class="read-more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', dRessources[0].id]">Read more</a>
 			</span>
-          </div>
-        </li>
-      </ul>
+        </a>
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="dRessources[1]">
+				    <span class="card-header" style="background-image: url({{dRessources[1].image}});" [routerLink]="['/detailRessource', dRessources[1].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{dRessources[1].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', dRessources[1].id]">Read more</a>
+			</span>
+        </a>
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="dRessources[2]">
+				    <span class="card-header" style="background-image: url({{dRessources[2].image}});" [routerLink]="['/detailRessource', dRessources[2].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{dRessources[2].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', dRessources[2].id]">Read more</a>
+			</span>
+        </a>
+
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="dRessources[3]">
+				    <span class="card-header" style="background-image: url({{dRessources[3].image}});" [routerLink]="['/detailRessource', dRessources[3].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{dRessources[3].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', dRessources[3].id]">Read more</a>
+			</span>
+        </a>
+
+      </div>
     </section>
 
     <div [hidden]="dRessources || errMess">
-      <img src="assets/images/loader.gif" alt="">
+<!--      <img src="assets/images/loader.gif" alt="">-->
     </div>
 
-    <section class="carousel">
-      <a class="category" (click)="lister('News')" >News</a>
-      <ul class="carousel-items" *ngIf="nRessources">
-        <li class="carousel-item" *ngFor="let ressource of nRessources">
-          <div class="card" style="width: 280px; height: 325px">
-            <span class="card-header" style="background-image: url({{ressource.image}});" [routerLink]="['/detailRessource', ressource.id]">
-				<span class="card-title">
-					<h3>{{ressource.title}}</h3>
-				</span>
+    <section>
+      <span [@expand] class="category" >News</span>
+      <a [@expand] class="view3" (click)="lister('News')">View all</a>
+
+      <div [@expand] class="cards" *ngIf="nRessources">
+        <a class="card" style="width: 250px; height: 350px" *ngIf="nRessources[0]">
+				    <span class="card-header" style="background-image: url({{nRessources[0].image}});" [routerLink]="['/detailRessource', nRessources[0].id]">
+
 			</span>
-            <span class="card-summary">
-				<div>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</div>
+          <span class="card-summary">
+              					<h2>{{nRessources[0].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
 			</span>
-            <span class="card-meta">
-          <a class="read-more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', nRessources[0].id]">Read more</a>
 			</span>
-          </div>
-        </li>
-      </ul>
+        </a>
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="nRessources[1]">
+				    <span class="card-header" style="background-image: url({{nRessources[1].image}});" [routerLink]="['/detailRessource', nRessources[1].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{nRessources[1].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', nRessources[1].id]">Read more</a>
+			</span>
+        </a>
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="nRessources[2]">
+				    <span class="card-header" style="background-image: url({{nRessources[2].image}});" [routerLink]="['/detailRessource', nRessources[2].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{nRessources[2].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', nRessources[2].id]">Read more</a>
+			</span>
+        </a>
+
+
+        <a class="card" style="width: 250px; height: 350px" *ngIf="nRessources[3]">
+				    <span class="card-header" style="background-image: url({{nRessources[3].image}});" [routerLink]="['/detailRessource', nRessources[3].id]">
+
+			</span>
+          <span class="card-summary">
+              					<h2>{{nRessources[3].title}}</h2>
+				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+			</span>
+          <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', nRessources[3].id]">Read more</a>
+			</span>
+        </a>
+
+      </div>
     </section>
-    <div [hidden]="dRessources || errMess">
-      <img src="assets/images/loader.gif" alt="">
+    <div [hidden]="nRessources || errMess">
+<!--      <img src="assets/images/loader.gif" alt="">-->
+
     </div>
 </body>
   </div>

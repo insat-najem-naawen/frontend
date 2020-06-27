@@ -6,11 +6,14 @@ import {ActivatedRoute} from '@angular/router';
 import {Answer} from '../Model/answer';
 import {UserService} from '../services/user.service';
 import {User} from '../Model/user';
+import {expand, flyInOut, visibility} from '../animations/app.animation';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  styleUrls: ['./question.component.css'],
+  animations: [flyInOut(), visibility(), expand()]
+
 })
 export class QuestionComponent implements OnInit {
 question: Question;

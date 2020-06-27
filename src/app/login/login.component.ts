@@ -2,6 +2,8 @@ import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegisterComponent} from '../register/register.component';
+import {AuthentificationService} from '../services/authentification.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,41 +12,22 @@ import {RegisterComponent} from '../register/register.component';
 })
 export class LoginComponent implements OnInit {
 email: string;
-firstname: string;
-lastname: string;
 username: string;
-email_reg: string;
-password_reg: string;
-userId = 1;
+
   LoginForm: FormGroup;
   @ViewChild('Loginform') LoginFormDirective;
   formErrors = {
-    'firstname' : '',
-    'lastname': '',
+
     'email': '',
-    'username': '',
     'password': ''
   };
   validationMessages = {
-    'firstname': {
-      'required': 'First name required.',
-      'minlength': 'at least 2 charachters.',
-      'maxlength': 'max length 25.'
-    },
-    'lastname': {
-      'required': 'Last name required.',
-      'minlength': 'at least 2 charachters.',
-      'maxlength': 'max length 25.'
-    },
+
     'email': {
       'required': 'email required.',
       'email': 'email is not in valid format'
     },
-    'username': {
-      'required': 'username required.',
-      'minlength': 'at least 2 charachters.',
-      'maxlength': 'max length 25.'
-    },
+
     'password': {
       'required': 'password required.'
     }
@@ -53,7 +36,9 @@ userId = 1;
   constructor(public dialog: MatDialog,
               private fb: FormBuilder,
               public dialogRef: MatDialogRef<LoginComponent>,
-              @Inject('BaseURL') private BaseURL) {
+              @Inject('BaseURL') private BaseURL,
+              private authentication: AuthentificationService,
+              private router: Router) {
     this.createForm();
   }
   ngOnInit(): void {
@@ -104,13 +89,17 @@ userId = 1;
   // }
 
   onSubmit() {
-    console.log(this.LoginForm.value);
+    // console.log(this.LoginForm.value);
+    // console.log(this.email);
+    const link = ['forum', this.email];
+    this.router.navigate(link);
     this.LoginForm.reset({
       email: '',
       password: ''
     });
     this.LoginFormDirective.resetForm();
-this.dialogRef.close();
+    this.dialogRef.close();
+
   }
 
   close() {
@@ -118,19 +107,21 @@ this.dialogRef.close();
   }
 
 
-  // login(credentials) {
-  //   console.log(credentials);
-  //   this.authentication.login(credentials).subscribe(
-  //     (response) => {
-  //       const token = response.id;
-  //       const link = ['cv'];
-  //       localStorage.setItem('token', token);
-  //       this.router.navigate(link);
-  //     },
-  //     (error) => {
-  //       console.log(error,`erreur`);
-  //     }
-  //   );
-  // }
+  login(credentials) {
+    console.log(credentials);
+    this.authentication.login(credentials).subscribe(
+      (response) => {
+        console.log(response);
+        const token = response.id;
+        console.log('token', token);
+        localStorage.setItem('token', token);
+        console.log(token);
+        // this.router.navigate(link);
+      },
+      (error) => {
+        console.log(error, `erreur`);
+      }
+    );
+  }
 
   }

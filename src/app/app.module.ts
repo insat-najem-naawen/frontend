@@ -36,6 +36,8 @@ import { Slide3Component } from './slide3/slide3.component';
 import {baseURL} from './Model/baseURL';
 import {HttpClientModule} from '@angular/common/http';
 import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
+import {LoginInterceptorProvider} from './Interceptors/loginInterceptor';
+import {LoginGuard} from './Guard/login.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +85,9 @@ import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
   ],
   providers: [
     {provide: 'BaseURL', useValue: baseURL},
-    ProcessHTTPMsgService
+    ProcessHTTPMsgService,
+    LoginInterceptorProvider,
+    LoginGuard
 
   ],
   bootstrap: [AppComponent]

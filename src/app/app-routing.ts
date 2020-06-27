@@ -13,13 +13,14 @@ import {CategoryRessourcesComponent} from './category-ressources/category-ressou
 import {ForumComponent} from './forum/forum.component';
 import {QuestionComponent} from './question/question.component';
 import {CreateCvComponent} from './create-cv/create-cv.component';
+import {LoginGuard} from './Guard/login.guard';
 
 
 
 const APP_ROUTING: Routes = [
   {path: '', component: HomepageComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'login/register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent,  canActivate : [LoginGuard]},
+  {path: 'register', component: RegisterComponent},
   {path: 'opportunities', component: OpportunitiesComponent},
   {path: 'findJob', component: FindJobComponent},
   {path: 'postJob', component: PostJobComponent},

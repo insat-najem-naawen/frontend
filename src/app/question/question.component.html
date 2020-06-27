@@ -1,5 +1,5 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container" *ngIf="question">
+<div class="container" *ngIf="question" [@expand]>
   <ul class="timeline">
     <li>
       <!-- begin timeline-time -->
@@ -32,7 +32,7 @@
           </i> Answers</a>
         </div>
 
-        <div *ngFor="let answer of question.answers">
+        <div *ngFor="let answer of question.answers" [@expand]>
         <div class="timeline-comment-box"  *ngIf="answer">
           <div>
 

@@ -6,11 +6,13 @@ import {User} from '../Model/user';
 import {UserService} from '../services/user.service';
 import {ActivatedRoute} from '@angular/router';
 import {Answer} from '../Model/answer';
+import {expand, flyInOut, visibility} from '../animations/app.animation';
 
 @Component({
   selector: 'app-forum',
   templateUrl: './forum.component.html',
-  styleUrls: ['./forum.component.css']
+  styleUrls: ['./forum.component.css'],
+  animations: [flyInOut(), visibility(), expand()]
 })
 export class ForumComponent implements OnInit {
 questions: Question[];

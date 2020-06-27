@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {LoginComponent} from '../login/login.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {RegisterComponent} from '../register/register.component';
+import {AuthentificationService} from '../services/authentification.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ import {RegisterComponent} from '../register/register.component';
 export class HeaderComponent implements OnInit {
 
   constructor(private router: Router,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              private authentificationService: AuthentificationService) { }
 
   ngOnInit(): void {
   }
@@ -25,5 +27,8 @@ export class HeaderComponent implements OnInit {
   }
   closeLoginForm() {
     this.dialog.closeAll();
+  }
+  logout() {
+    this.authentificationService.logout();
   }
 }
