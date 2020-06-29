@@ -1,24 +1,23 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../services/user.service';
-import {OpportunityService} from '../services/opportunity.service';
 import {Opportunity} from '../Model/opportunity';
+import {OpportunityService} from '../services/opportunity.service';
 import {Router} from '@angular/router';
 import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-post-form',
-  templateUrl: './post-form.component.html',
-  styleUrls: ['./post-form.component.css']
+  selector: 'app-postform1',
+  templateUrl: './postform1.component.html',
+  styleUrls: ['./postform1.component.css']
 })
-export class PostFormComponent implements OnInit {
-title: string;
-domain: string;
-link: string;
-description: string;
-date: Date;
-postForm: FormGroup;
-opportunities: Opportunity[];
+export class Postform1Component implements OnInit {
+  title: string;
+  domain: string;
+  link: string;
+  description: string;
+  date: Date;
+  postForm: FormGroup;
+  opportunities: Opportunity[];
   @ViewChild('pform') postFormDirective;
   formErrors = {
     'title': '',
@@ -55,8 +54,7 @@ opportunities: Opportunity[];
   constructor(private fb: FormBuilder,
               private opportunityService: OpportunityService,
               private router: Router,
-              public dialogRef: MatDialogRef<PostFormComponent>,
-  ) {
+              public dialogRef: MatDialogRef<Postform1Component>) {
     this.createForm();
     this.opportunityService.getOpportunities().subscribe((opp) => this.opportunities = opp);
   }
@@ -111,24 +109,32 @@ opportunities: Opportunity[];
     });
     this.postFormDirective.resetForm();
     this.dialogRef.close();
+
   }
 
   post(credentials: Opportunity) {
-    credentials.category = 'job';
-    // console.log(credentials);
-    this.opportunityService.postOpportunity(credentials).subscribe((response) => {
-        console.log('response', response);
-        const link = ['findJob'];
-        this.router.navigate(link);
-      },
-      (error) =>
-      {console.log(error); },
-      () => {
-        console.log('complete :>');
-      });
+    credentials.category = 'internship';
+    console.log(credentials);
+    this.opportunityService.postOpportunity(credentials);
+    console.log(this.opportunities);
+    const link = ['findInternship'];
+    this.router.navigate(link);
+
+    // this.userService.postUser(credentials).subscribe((response) => {
+    //     console.log('salma');
+    //     console.log('response', response);
+    //   },
+    //   (error) => {
+    //     console.log('erreur', error);
+    //     console.log(typeof (credentials));
+    //     console.log(credentials);
+    //   },
+    //   () => {
+    //     console.log('complete :>');
+    //   });
+  }
+  close() {
+    this.dialogRef.close();
   }
 
-close() {
-    this.dialogRef.close();
-}
 }

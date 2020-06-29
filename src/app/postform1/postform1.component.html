@@ -6,7 +6,8 @@
     <!-- Login Form -->
     <form novalidate class="cont" [formGroup]="postForm" #pform= "ngForm" (ngSubmit)="onSubmit()">
       <span (click)="close()">X</span>
-      <input type="text" id="title" class="fadeIn first" name="title" placeholder="job title" formControlName="title" required
+
+      <input type="text" id="title" class="fadeIn first" name="title" placeholder="Internship title" formControlName="title" required
              [(ngModel)]="title"
              class="form-control">
       <div *ngIf="formErrors.title">{{formErrors.title}}</div>
@@ -32,15 +33,14 @@
       <div *ngIf="formErrors.description">{{formErrors.description}}</div>
 
       <input type="submit" class="fadeIn last" value="submit" [disabled]="postForm.invalid"
-              (click)="post(postForm.value)">
-
+             (click)="post(postForm.value)">
     </form>
 
 
     <!-- Remind Passowrd -->
-<!--    <div id="formFooter">-->
-<!--      <a [routerLink]="['createCV']" class="underlineHover" href="#">See template</a>-->
-<!--    </div>-->
+    <!--    <div id="formFooter">-->
+    <!--      <a [routerLink]="['createCV']" class="underlineHover" href="#">See template</a>-->
+    <!--    </div>-->
 
   </div>
 </div>

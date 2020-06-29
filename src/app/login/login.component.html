@@ -4,13 +4,13 @@
     <label>
       <span>Email</span>
       <input type="email"
-             formControlName="email"
-             [(ngModel)]="email"
+             formControlName="username"
+             [(ngModel)]="username"
              required
-             id="email"
-             ngModel name="email"
+             id="username"
+             ngModel name="username"
              class="form-control"/>
-      <div *ngIf="formErrors.email">{{formErrors.email}}</div>
+      <div *ngIf="formErrors.username">{{formErrors.username}}</div>
     </label>
 
 

@@ -49,7 +49,7 @@ users: User[];
   // }
 
   // getUserById(id: number): Observable<User>  {
-  //   return this.http.get<User>(baseURL + 'users/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
+  //   return this.http.get<User>('/api/form/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
   // }
 // putUser(credentials): Observable<any> {
 //     return this.http.post(this.link, credentials);
@@ -65,7 +65,7 @@ users: User[];
         // 'Accept-Type': 'application/json',
       })
     };
-    return this.http.post('/api/form' , user, httpOptions)
+    return this.http.post('/form' , user, httpOptions)
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 

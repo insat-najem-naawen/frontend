@@ -1,23 +1,19 @@
 import {Answer} from './answer';
+import {User} from './user';
 
 export class Question {
   id: number;
-  author: string;
-  category: string;
+  author: User;
+  // category: string;
   description: string;
   date: string;
-  image: string;
+  // image: string;
   answers: Answer[];
 
-  constructor(id = 0, author = '', image = '', category = '', description = '', date = '',
-              answers) {
-    this.id = id;
+  constructor( author: User, description = '', date = '', answers =  []) {
     this.author = author;
-    this.category = category;
     this.description = description;
-    this.author = author;
     this.date = date;
-    this.image = image;
     this.answers = answers;
   }
 }

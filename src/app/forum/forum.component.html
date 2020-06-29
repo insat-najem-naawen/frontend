@@ -1,5 +1,5 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container" *ngIf="questions">
+<div class="container" >
 <div class="banner" [@flyInOut]>
   <div class="app-text">
     <h3>Have a question ?</h3>
@@ -33,17 +33,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filter by category
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Opportunities</a>
-            <a class="dropdown-item" href="#">News</a>
-            <a class="dropdown-item" href="#">Courses</a>
-            <a class="dropdown-item" href="#">Documents</a>
-          </div>
-        </li>
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--            Filter by category-->
+<!--          </a>-->
+<!--          <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--            <a class="dropdown-item" href="#">Opportunities</a>-->
+<!--            <a class="dropdown-item" href="#">News</a>-->
+<!--            <a class="dropdown-item" href="#">Courses</a>-->
+<!--            <a class="dropdown-item" href="#">Documents</a>-->
+<!--          </div>-->
+<!--        </li>-->
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -52,7 +52,7 @@
     </div>
   </nav>
 
-<section id="questions" [@expand]>
+<section id="questions" [@expand] *ngIf="questions">
   <ul  class="timeline">
     <li *ngFor="let question of questions">
       <!-- begin timeline-time -->
@@ -70,9 +70,9 @@
 
       <div class="timeline-body">
         <div class="timeline-header">
-          <span class="userimage"><img src="{{question.image}}" alt=""></span>
-          <span class="username"><a href="javascript:;">{{question.author}}</a> <small></small></span>
-          <span class="pull-right text-muted">{{question.category}}</span>
+<!--          <span class="userimage"><img src="{{question.image}}" alt=""></span>-->
+          <span class="username"><a href="javascript:;">{{question.author.username}}</a> <small></small></span>
+<!--          <span class="pull-right text-muted">{{question.category}}</span>-->
         </div>
         <div class="timeline-content">
           <p>
@@ -116,7 +116,7 @@
 </div>
 
 <div [hidden]="questions">
-  <img src="assets/images/loader.gif" alt="">
+<!--  <img src="assets/images/loader.gif" alt="">-->
 </div>
 
 

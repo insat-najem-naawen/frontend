@@ -11,19 +11,19 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-email: string;
+// email: string;
 username: string;
 
   LoginForm: FormGroup;
   @ViewChild('Loginform') LoginFormDirective;
   formErrors = {
 
-    'email': '',
+    'username': '',
     'password': ''
   };
   validationMessages = {
 
-    'email': {
+    'username': {
       'required': 'email required.',
       'email': 'email is not in valid format'
     },
@@ -48,7 +48,7 @@ username: string;
   createForm() {
 
     this.LoginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
 
@@ -91,10 +91,10 @@ username: string;
   onSubmit() {
     // console.log(this.LoginForm.value);
     // console.log(this.email);
-    const link = ['forum', this.email];
+    const link = ['forum'];
     this.router.navigate(link);
     this.LoginForm.reset({
-      email: '',
+      username: '',
       password: ''
     });
     this.LoginFormDirective.resetForm();
@@ -112,14 +112,16 @@ username: string;
     this.authentication.login(credentials).subscribe(
       (response) => {
         console.log(response);
-        const token = response.id;
+        const token = response.token;
         console.log('token', token);
         localStorage.setItem('token', token);
         console.log(token);
+        alert('cest bon');
         // this.router.navigate(link);
       },
       (error) => {
         console.log(error, `erreur`);
+        alert('NOOON');
       }
     );
   }

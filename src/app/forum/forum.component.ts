@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Question} from '../Model/question';
-import {ForumService} from '../services/forum.service';
+import {QuestionService} from '../services/question.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {User} from '../Model/user';
 import {UserService} from '../services/user.service';
@@ -29,15 +29,17 @@ errMess: string;
 @ViewChild('cform') QuestionFormDirective;
 
 
-  constructor(private forumService: ForumService,
+  constructor(private questionService: QuestionService,
               private fb: FormBuilder,
               private userService: UserService,
               private activatedRoute: ActivatedRoute,
               ) {
     this.show = true;
     this.createForm();
-    this.forumService.getQuestions().subscribe((questions) => this.questions = questions);
+    this.questionService.getQuestions().subscribe((questions) => this.questions = questions,
+      (error) => console.log(error));
 
+    // this.d = new Date();
 
   }
 
@@ -67,14 +69,26 @@ afficher() {
     this.QuestionFormDirective.resetForm();
   }
 
-  ajouter(NgQuestion: string) {
+  ajouter(NgQuestion: String) {
     // console.log(this.user);
-    console.log(NgQuestion);
+    // console.log(NgQuestion);
+    // console.log(this.d);
     const d = new Date();
     let date: string;
     date = d.toDateString();
-    this.question = new Question(5, this.user.username, this.user.image, 'opportunities', NgQuestion, date, []);
-    this.questions.push(this.question);
+    // @ts-ignore
+    this.question = new Question(this.user, NgQuestion, date, []) ;
+    this.questionService.postQuestion(this.question).subscribe((response) => {
+        console.log('response', response);
+      },
+      (error) => {
+        console.log('erreur', error);
+        // console.log(typeof (NgQuestion));
+        // console.log(NgQuestion);
+      },
+      () => {
+        console.log('complete :>');
+      });
   }
 
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Question} from '../Model/question';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {ForumService} from '../services/forum.service';
+import {QuestionService} from '../services/question.service';
 import {ActivatedRoute} from '@angular/router';
 import {Answer} from '../Model/answer';
 import {UserService} from '../services/user.service';
@@ -27,7 +27,7 @@ user: User;
   @ViewChild('cform') AnswerFormDirective;
 
 
-  constructor(private forumService: ForumService,
+  constructor(private forumService: QuestionService,
               private fb: FormBuilder,
               private activatedRoute: ActivatedRoute,
                private userService: UserService) {
