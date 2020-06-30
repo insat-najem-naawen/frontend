@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Ressource} from '../Model/ressource';
 import {RessourcesService} from '../services/ressources.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {expand, flyInOut, visibility} from '../animations/app.animation';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-detail-ressource',
@@ -15,15 +16,14 @@ export class DetailRessourceComponent implements OnInit {
 ressource: Ressource;
 errMess: string;
   constructor( private ressourcesService: RessourcesService,
-              private activatedRoute: ActivatedRoute,
+              private route: ActivatedRoute,
                private router: Router) { }
 
   ngOnInit(): void {
-    const id = +this.activatedRoute.snapshot.params['id'];
-    // console.log(id);
-    this.ressourcesService.getRessourcesById(id).subscribe((ressource) => this.ressource = ressource,
-      errmess => this.errMess = <any>errmess);
-    console.log(this.ressource);
+    this.route.params.pipe(switchMap((params: Params) => this.ressourcesService.getRessourceById(params['id'])))
+      .subscribe((ressource) => {this.ressource = ressource[0];
+          console.log(this.ressource); },
+        errmess => this.errMess = <any> errmess);
       }
   lister(category: string) {
     const link = ['ressources', category];

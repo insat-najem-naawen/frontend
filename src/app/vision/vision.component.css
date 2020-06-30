@@ -1,7 +1,6 @@
 #vision {
-  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(vision.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: #22427C;
+  clip-path: polygon(0 17%,100% 0,100% 100%,0 100%);
   color: #efefef!important;
   background-attachment: fixed;
   padding-top: 50px;

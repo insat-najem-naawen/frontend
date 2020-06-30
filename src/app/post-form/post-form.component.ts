@@ -16,7 +16,7 @@ title: string;
 domain: string;
 link: string;
 description: string;
-date: Date;
+publishedOn: Date;
 postForm: FormGroup;
 opportunities: Opportunity[];
   @ViewChild('pform') postFormDirective;
@@ -25,7 +25,7 @@ opportunities: Opportunity[];
     'domain': '',
     'link': '',
     'description': '',
-    'date': ''
+    'publishedOn': ''
   };
   validationMessages = {
     'title': {
@@ -46,7 +46,7 @@ opportunities: Opportunity[];
       'minlength': 'at least 2 charachters.',
       'maxlength': 'max length 25.'
     },
-    'date': {
+    'publishedOn': {
       'required': 'date required.',
       'date': 'date is not in a valid format'
     }
@@ -58,7 +58,8 @@ opportunities: Opportunity[];
               public dialogRef: MatDialogRef<PostFormComponent>,
   ) {
     this.createForm();
-    this.opportunityService.getOpportunities().subscribe((opp) => this.opportunities = opp);
+    this.opportunityService.getOpportunitiesByCategory('job').subscribe((opp) => this.opportunities = opp,
+      (error) => console.log(error));
   }
 
   ngOnInit(): void {
@@ -70,7 +71,7 @@ opportunities: Opportunity[];
       domain: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       link: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       description: ['', Validators.required],
-      date: ['', Validators.required]
+      publishedOn: ['', Validators.required]
     });
     this.postForm.valueChanges.subscribe(data => this.onValueChangedRegister(data));
     this.onValueChangedRegister(); // (re)set form validations messages
@@ -103,11 +104,11 @@ opportunities: Opportunity[];
   onSubmit() {
     // console.log(this.RegisterForm.value);
     this.postForm.reset({
-      firstName: '',
-      lastName: '',
-      email: '',
-      username: '',
-      password: ''
+      'title': '',
+      'domain': '',
+      'link': '',
+      'description': '',
+      'publishedOn': ''
     });
     this.postFormDirective.resetForm();
     this.dialogRef.close();
@@ -115,14 +116,12 @@ opportunities: Opportunity[];
 
   post(credentials: Opportunity) {
     credentials.category = 'job';
-    // console.log(credentials);
     this.opportunityService.postOpportunity(credentials).subscribe((response) => {
         console.log('response', response);
         const link = ['findJob'];
         this.router.navigate(link);
       },
-      (error) =>
-      {console.log(error); },
+      (error) => {console.log(error); },
       () => {
         console.log('complete :>');
       });

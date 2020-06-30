@@ -41,6 +41,7 @@ import { PostFormComponent } from './post-form/post-form.component';
 import { DetailJobComponent } from './detail-job/detail-job.component';
 import { DetailInternshipComponent } from './detail-internship/detail-internship.component';
 import { Postform1Component } from './postform1/postform1.component';
+import { CvTemplateComponent } from './cv-template/cv-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,8 @@ import { Postform1Component } from './postform1/postform1.component';
   PostFormComponent,
   DetailJobComponent,
   DetailInternshipComponent,
-  Postform1Component
+  Postform1Component,
+  CvTemplateComponent
   ],
     imports: [
         BrowserModule,
@@ -91,7 +93,8 @@ import { Postform1Component } from './postform1/postform1.component';
     LoginComponent,
     RegisterComponent,
     PostFormComponent,
-    Postform1Component
+    Postform1Component,
+    CvFormComponent
   ],
   providers: [
     {provide: 'BaseURL', useValue: baseURL},

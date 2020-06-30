@@ -4,6 +4,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegisterComponent} from '../register/register.component';
 import {AuthentificationService} from '../services/authentification.service';
 import {Router} from '@angular/router';
+import {UserService} from '../services/user.service';
+import {User} from '../Model/user';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +15,10 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 // email: string;
 username: string;
-
+user: User;
   LoginForm: FormGroup;
+   // ids: number[];
+
   @ViewChild('Loginform') LoginFormDirective;
   formErrors = {
 
@@ -38,7 +42,8 @@ username: string;
               public dialogRef: MatDialogRef<LoginComponent>,
               @Inject('BaseURL') private BaseURL,
               private authentication: AuthentificationService,
-              private router: Router) {
+              private router: Router,
+              private userService: UserService) {
     this.createForm();
   }
   ngOnInit(): void {
@@ -91,8 +96,8 @@ username: string;
   onSubmit() {
     // console.log(this.LoginForm.value);
     // console.log(this.email);
-    const link = ['forum'];
-    this.router.navigate(link);
+    // const link = ['forum'];
+    // this.router.navigate(link);
     this.LoginForm.reset({
       username: '',
       password: ''
@@ -107,7 +112,7 @@ username: string;
   }
 
 
-  login(credentials) {
+  login(credentials, username: string) {
     console.log(credentials);
     this.authentication.login(credentials).subscribe(
       (response) => {
@@ -116,12 +121,21 @@ username: string;
         console.log('token', token);
         localStorage.setItem('token', token);
         console.log(token);
-        alert('cest bon');
         // this.router.navigate(link);
+        console.log('email login', username);
+        this.userService.getUserByEmail(username).subscribe((user) => {this.user = user;
+        console.log ('le user login by email ', this.user);
+        console.log('user login ', this.user);
+        console.log(this.user[0].id);
+        const id = this.user[0].id;
+          const link = ['forum', id];
+          this.router.navigate(link);
+        },
+          (error) => console.log(error));
       },
       (error) => {
         console.log(error, `erreur`);
-        alert('NOOON');
+        this.dialog.open(RegisterComponent, {width: '1000px', height: '528px'});
       }
     );
   }

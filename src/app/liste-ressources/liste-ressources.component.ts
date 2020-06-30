@@ -27,8 +27,8 @@ export class ListeRessourcesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ressource.getRessources().subscribe((ressources) => this.ressources = ressources,
-      errmess => this.errMess = <any>errmess);
+    // this.ressource.getRessources().subscribe((ressources) => this.ressources = ressources,
+    //   errmess => this.errMess = <any>errmess);
     this.ressource.getRessourcesByCategory('formation').subscribe(ressources => this.cRessources = ressources,
       errmess => this.errMess = <any>errmess);
     this.ressource.getRessourcesByCategory('documents').subscribe(ressources => this.dRessources = ressources,

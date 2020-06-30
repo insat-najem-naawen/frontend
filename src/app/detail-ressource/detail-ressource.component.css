@@ -5,8 +5,9 @@
 /*  background: url("https://res.cloudinary.com/muhammederdem/image/upload/v1537132206/news-slider/background.jpg") no-repeat;*/
 /*}*/
 #cov{
-  margin-left: 300px;
+  margin-left: 350px;
   margin-top: 10px;
+  margin-bottom: 300px;
 }
 /*.bo {*/
 /*  border: 1px black solid;*/
@@ -14,7 +15,7 @@
 /*}*/
 
 .card-title{
-  font-size: 40px;
+  font-size: 25px;
   font-family: Poppins, Helvetica, Arial, sans-serif;
   margin-left: 70px;
   margin-top: 15px;

@@ -1,0 +1,40 @@
+/* Page header */
+.container{
+  padding : 50px 0px 0px 0px;
+}
+
+.container h1{
+  font-family: "PT Sans Narrow";
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 1;
+  margin: 60px 0px 0px 40px;
+  color: #22427C;
+}
+.container .lead{
+  font-family: "PT Sans Narrow";
+  font-size: 25px;
+  line-height: 1.1;
+  margin: 10px 0px 0px 43px;
+}
+.container.col-lg-6 order-2 order-lg-1{
+  size: auto;
+}
+template
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+#formFooter2{
+  margin: 30px 0px 20px 100px;
+  font-size: large;
+  background-color: lightsteelblue;
+  border-top: 1px solid #dce8f1;
+  padding: 27px 20px 27px;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  opacity: 60%;
+  display: inline-block;
+  width: auto;
+}
+#formFooter2:hover{
+  background-color: #d3dae9;
+  opacity: 100%;
+}

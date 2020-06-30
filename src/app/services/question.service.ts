@@ -19,18 +19,19 @@ users: User[];
   constructor(private userService: UserService,
               private http: HttpClient,
               private processHTTPMsgService: ProcessHTTPMsgService) {
-    this.userService.getUsers().subscribe((users) => this.users = users);
-    console.log(this.users);
-    this.d = new Date();
-    this.questions = [
-      // tslint:disable-next-line:max-line-length
-   new Question(this.users[0], 'description', 'Sunday 28/06/2020', []),
-      // tslint:disable-next-line:max-line-length
-    new Question( this.users[1], 'description', 'Sunday 28/06/2020', []),
-      new Question(  this.users[2], 'description', 'Sunday 28/06/2020', []),
-      new Question( this.users[3], 'description', 'Sunday 28/06/2020', [])
-
-  ];
+    this.userService.getUsers().subscribe((users) => this.users = users,
+      (error) => console.log('getUsers', error));
+    // console.log(this.users);
+    // this.d = new Date();
+  //   this.questions = [
+  //     // tslint:disable-next-line:max-line-length
+  //  new Question(this.users[0], 'description', 'Sunday 28/06/2020', []),
+  //     // tslint:disable-next-line:max-line-length
+  //   new Question( this.users[1], 'description', 'Sunday 28/06/2020', []),
+  //     new Question(  this.users[2], 'description', 'Sunday 28/06/2020', []),
+  //     new Question( this.users[3], 'description', 'Sunday 28/06/2020', [])
+  //
+  // ];
   }
   // getQuestions(): Observable<Question[]>  {
   //   return of(this.questions);
@@ -46,9 +47,9 @@ users: User[];
 
 
 
-  getQuestionsById(id: number): Observable<Question> {
+  getQuestionById(id: number): Observable<Question> {
 
-    return this.http.get<Question>('/forum/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
+    return this.http.get<Question>('/get_question_by_id/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
 
   }
   postQuestion(question: Question): Observable<any> {
@@ -62,7 +63,19 @@ users: User[];
         // 'Accept-Type': 'application/json',
       })
     };
-    return this.http.post('/forum' , question, httpOptions)
+    return this.http.post('/forum/form' , question, httpOptions)
+      .pipe(catchError(this.processHTTPMsgService.handleError));
+  }
+
+  postAnswer(answer: Answer): Observable<any> {
+    console.log('the answer is', answer);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'Accept-Type': 'application/json',
+      })
+    };
+    return this.http.post('/answer/form' , answer, httpOptions)
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 

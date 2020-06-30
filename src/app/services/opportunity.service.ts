@@ -94,7 +94,7 @@ export class OpportunityService {
 
 
   getOpportunityById(id: number): Observable<Opportunity>  {
-    return this.http.get<Opportunity>('/get_oppor/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
+    return this.http.get<Opportunity>('/get_oppor_by_id/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   // getOpportunities(): Observable<User>  {

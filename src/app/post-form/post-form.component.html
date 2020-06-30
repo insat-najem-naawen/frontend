@@ -21,10 +21,10 @@
              [(ngModel)]="link">
       <div *ngIf="formErrors.link">{{formErrors.link}}</div>
 
-      <input type="text" id="published_on" class="fadeIn fourth" name="date" placeholder="date"
-             formControlName="date" required
-             [(ngModel)]="date">
-      <div *ngIf="formErrors.date">{{formErrors.date}}</div>
+      <input type="date" id="published_on" class="fadeIn fourth" name="date" placeholder="date"
+             formControlName="publishedOn" required
+             [(ngModel)]="publishedOn">
+      <div *ngIf="formErrors.publishedOn">{{formErrors.publishedOn}}</div>
 
       <input type="text" id="description" class="fadeIn fourth" name="description" placeholder="description"
              formControlName="description" required

@@ -18,7 +18,7 @@ export class NavRessourcesComponent implements OnInit {
               public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.ressource.getRessources().subscribe((ressource) => this.ressources = ressource);
+    // this.ressource.getRessources().subscribe((ressource) => this.ressources = ressource);
   }
 
   detail(id: number) {

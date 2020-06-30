@@ -4,7 +4,7 @@
     <li>
       <!-- begin timeline-time -->
       <div class="timeline-time">
-        <span class="date">{{question.date}}</span>
+        <span class="date">{{question.date['date']}}</span>
         <!--        <span class="time">04:20</span>-->
       </div>
       <!--       end timeline-time-->
@@ -17,9 +17,9 @@
 
       <div class="timeline-body">
         <div class="timeline-header">
-          <span class="userimage"><img src="{{question.image}}" alt=""></span>
+<!--          <span class="userimage"><img src="{{question.image}}" alt=""></span>-->
           <span class="username"><a href="javascript:;">{{question.author}}</a> <small></small></span>
-          <span class="pull-right text-muted">{{question.category}}</span>
+<!--          <span class="pull-right text-muted">{{question.category}}</span>-->
         </div>
         <div class="timeline-content">
           <p>
@@ -32,29 +32,29 @@
           </i> Answers</a>
         </div>
 
-        <div *ngFor="let answer of question.answers" [@expand]>
-        <div class="timeline-comment-box"  *ngIf="answer">
-          <div>
+<!--        <div *ngFor="let answer of question['answers']" [@expand]>-->
+<!--        <div class="timeline-comment-box"  *ngIf="answer">-->
+<!--          <div>-->
 
-            <div class="timeline-header" >
-              <span class="userimage" ><img src="{{answer.image}}" alt=""></span>
-              <span class="username" ><a href="javascript:;">{{answer.author}}</a></span>
-              <span class="pull-right text-muted">{{answer.date}}</span>
-              <div>{{answer.description}}</div>
-            </div>
-          </div>
-        </div>
-          <div [hidden]="answer">
-            <img src="assets/images/loader.gif" alt="">
-          </div>
-        </div>
+<!--            <div class="timeline-header" >-->
+<!--&lt;!&ndash;              <span class="userimage" ><img src="{{answer.image}}" alt=""></span>&ndash;&gt;-->
+<!--&lt;!&ndash;              <span class="username" ><a href="javascript:;">{{answer.author}}</a></span>&ndash;&gt;-->
+<!--&lt;!&ndash;              <span class="pull-right text-muted">{{answer.date}}</span>&ndash;&gt;-->
+<!--              <div>{{answer.description}}</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--          <div [hidden]="answer">-->
+<!--            <img src="assets/images/loader.gif" alt="">-->
+<!--          </div>-->
+<!--        </div>-->
 
 
 
           <div  class="timeline-comment-box">
             <div class="timeline-header">
 
-              <span class="userimage"><img src="{{user.image}}" alt=""></span>
+<!--              <span class="userimage"><img src="{{user.image}}" alt=""></span>-->
             </div>
             <div class="input">
 

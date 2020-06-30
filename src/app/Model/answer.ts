@@ -1,16 +1,15 @@
+import {User} from './user';
+
 export class Answer {
   id: number;
   author: string;
   description: string;
-  date: string;
+  date: Date;
   image: string;
 
-  constructor(id = 0, author = '', description = '', date = '', image = '') {
-    this.id = id;
+  constructor( description = '', date: Date, author: string ) {
     this.author = author;
     this.description = description;
-    this.author = author;
     this.date = date;
-    this.image = image;
   }
 }

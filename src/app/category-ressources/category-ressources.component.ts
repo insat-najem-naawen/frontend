@@ -20,7 +20,7 @@ ressources: Ressource[];
     const category = this.activatedRoute.snapshot.params['category'];
     console.log(category);
     this.ressourcesService.getRessourcesByCategory(String(category)).subscribe(ressources => this.ressources = ressources);
-    console.log(this.ressources);
+    // console.log(this.ressources);
   }
   detail(id: number) {
     const link = ['detailRessource', id];

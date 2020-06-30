@@ -122,9 +122,9 @@ this.userService.getUsers().subscribe((users) => this.users = users,
 
   ajoutUser(credentials) {
      // this.user = new User(5, first_name, last_name, username,'',[''], email, password);
-     console.log(credentials);
+     // console.log(credentials);
     // console.log(user);
-    console.log(typeof (credentials));
+    // console.log(typeof (credentials));
     this.userService.postUser(credentials).subscribe((response) => {
       console.log('salma');
         console.log('response', response);
@@ -136,6 +136,7 @@ this.userService.getUsers().subscribe((users) => this.users = users,
       },
       () => {
         console.log('complete :>');
+        this.dialog.open(LoginComponent, {width: '1000px', height: '528px'}  )
       });
   }
   close() {

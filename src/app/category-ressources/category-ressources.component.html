@@ -6,12 +6,12 @@
   <div class="container" >
     <div class="cards" *ngIf="ressources" [@expand]>
       <a class="card" style="width: 280px; height: 350px" *ngFor="let ressource of ressources">
-				    <span class="card-header" style="background-image: url({{ressource.image}});" [routerLink]="['/detailRessource', ressource.id]">
+<!--				    <span class="card-header" style="background-image: url({{ressource.image}});" [routerLink]="['/detailRessource', ressource.id]">-->
 
-			</span>
+<!--			</span>-->
             <span class="card-summary">
               					<h3>{{ressource.title}}</h3>
-				<p>A summary will also be present. Usually two to three brief sentences about the content on the detail page.</p>
+				<p>{{ressource.description}}</p>
 			</span>
             <span class="card-meta">
           <a class="read-more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div [hidden]="ressources">
-<!--    <img class="load" src="assets/images/loader.gif" alt="">-->
+    <img class="load" src="assets/images/loader.gif" alt="">
   </div>
 </div>
 

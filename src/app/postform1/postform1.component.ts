@@ -15,7 +15,7 @@ export class Postform1Component implements OnInit {
   domain: string;
   link: string;
   description: string;
-  date: Date;
+  publishedOn: Date;
   postForm: FormGroup;
   opportunities: Opportunity[];
   @ViewChild('pform') postFormDirective;
@@ -24,7 +24,7 @@ export class Postform1Component implements OnInit {
     'domain': '',
     'link': '',
     'description': '',
-    'date': ''
+    'publishedOn': ''
   };
   validationMessages = {
     'title': {
@@ -45,7 +45,7 @@ export class Postform1Component implements OnInit {
       'minlength': 'at least 2 charachters.',
       'maxlength': 'max length 25.'
     },
-    'date': {
+    'publishedOn': {
       'required': 'date required.',
       'date': 'date is not in a valid format'
     }
@@ -56,7 +56,7 @@ export class Postform1Component implements OnInit {
               private router: Router,
               public dialogRef: MatDialogRef<Postform1Component>) {
     this.createForm();
-    this.opportunityService.getOpportunities().subscribe((opp) => this.opportunities = opp);
+    this.opportunityService.getOpportunitiesByCategory('internship').subscribe((opp) => this.opportunities = opp);
   }
 
   ngOnInit(): void {
@@ -68,7 +68,7 @@ export class Postform1Component implements OnInit {
       domain: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       link: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       description: ['', Validators.required],
-      date: ['', Validators.required]
+      publishedOn: ['', Validators.required]
     });
     this.postForm.valueChanges.subscribe(data => this.onValueChangedRegister(data));
     this.onValueChangedRegister(); // (re)set form validations messages
@@ -101,11 +101,11 @@ export class Postform1Component implements OnInit {
   onSubmit() {
     // console.log(this.RegisterForm.value);
     this.postForm.reset({
-      firstName: '',
-      lastName: '',
-      email: '',
-      username: '',
-      password: ''
+      'title': '',
+      'domain': '',
+      'link': '',
+      'description': '',
+      'publishedOn': ''
     });
     this.postFormDirective.resetForm();
     this.dialogRef.close();
@@ -114,24 +114,15 @@ export class Postform1Component implements OnInit {
 
   post(credentials: Opportunity) {
     credentials.category = 'internship';
-    console.log(credentials);
-    this.opportunityService.postOpportunity(credentials);
-    console.log(this.opportunities);
-    const link = ['findInternship'];
-    this.router.navigate(link);
-
-    // this.userService.postUser(credentials).subscribe((response) => {
-    //     console.log('salma');
-    //     console.log('response', response);
-    //   },
-    //   (error) => {
-    //     console.log('erreur', error);
-    //     console.log(typeof (credentials));
-    //     console.log(credentials);
-    //   },
-    //   () => {
-    //     console.log('complete :>');
-    //   });
+    this.opportunityService.postOpportunity(credentials).subscribe((response) => {
+        console.log('response', response);
+        const link = ['findInternship'];
+        this.router.navigate(link);
+      },
+      (error) => {console.log(error); },
+      () => {
+        console.log('complete :>');
+      });
   }
   close() {
     this.dialogRef.close();

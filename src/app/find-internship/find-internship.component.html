@@ -22,12 +22,12 @@
     <div class="row">
       <div class="col-lg-4 col-xs-12 text-center" *ngFor="let opportunity of iOpportunities">
         <div class="box">
-          <i class="fa fa-behance fa-3x" style="color: #22427C" aria-hidden="true"></i>
+<!--          <i class="fa fa-behance fa-3x" style="color: #22427C" aria-hidden="true"></i>-->
           <div class="box-title">
             <h3>{{opportunity.title}}</h3>
           </div>
           <div class="box-text">
-            <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+            <span>{{opportunity.description}}</span>
           </div>
           <div class="box-btn">
             <a class="btn btn-outline-light"  [routerLink]="['detailInternship', opportunity.id]">read more</a>
@@ -41,25 +41,25 @@
 </div>
 <!--opportunities-->
 
-<!--pagination-->
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">«</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">»</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-<!--pagination-->
+<!--&lt;!&ndash;pagination&ndash;&gt;-->
+<!--<nav aria-label="Page navigation example">-->
+<!--  <ul class="pagination">-->
+<!--    <li class="page-item">-->
+<!--      <a class="page-link" href="#" aria-label="Previous">-->
+<!--        <span aria-hidden="true">«</span>-->
+<!--        <span class="sr-only">Previous</span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li class="page-item active"><a class="page-link" href="#">1</a></li>-->
+<!--    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--    <li class="page-item">-->
+<!--      <a class="page-link" href="#" aria-label="Next">-->
+<!--        <span aria-hidden="true">»</span>-->
+<!--        <span class="sr-only">Next</span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</nav>-->
+<!--&lt;!&ndash;pagination&ndash;&gt;-->
 

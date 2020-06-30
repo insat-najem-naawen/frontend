@@ -11,6 +11,7 @@ import {AuthentificationService} from '../services/authentification.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  visibility = false;
 
   constructor(private router: Router,
               public dialog: MatDialog,
@@ -30,5 +31,9 @@ export class HeaderComponent implements OnInit {
   }
   logout() {
     this.authentificationService.logout();
+    console.log('entrer');
+  }
+  show() {
+    this.visibility = !this.visibility;
   }
 }

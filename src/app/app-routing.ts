@@ -17,12 +17,15 @@ import {CvFormComponent} from './cv-form/cv-form.component';
 import {PostFormComponent} from './post-form/post-form.component';
 import {DetailJobComponent} from './detail-job/detail-job.component';
 import {Postform1Component} from './postform1/postform1.component';
+import {LogoutGuard} from './Guard/logout.guard';
+import {CvTemplateComponent} from './cv-template/cv-template.component';
+import {LoginGuard} from './Guard/login.guard';
 
 
 
 const APP_ROUTING: Routes = [
   {path: '', component: HomepageComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent, canActivate: [LogoutGuard]},
   {path: 'login/register', component: RegisterComponent},
   {path: 'opportunities', component: OpportunitiesComponent},
   {path: 'findJob', component: FindJobComponent},
@@ -33,14 +36,15 @@ const APP_ROUTING: Routes = [
   {path: 'listeRessources', component: ListeRessourcesComponent},
   {path: 'detailRessource/:id', component: DetailRessourceComponent},
   {path: 'ressources/:category', component: CategoryRessourcesComponent},
-  {path: 'forum', component: ForumComponent},
-  {path: 'question/:id/:email', component: QuestionComponent},
+  {path: 'forum/:id', component: ForumComponent},
+  {path: 'forum/:id/:idQuestion', component: QuestionComponent},
   {path: 'findJob/createCV', component: CreateCvComponent},
   {path: 'findJob/createCV/cvForm', component: CvFormComponent},
   {path: 'findJob/createCV/cvForm/createCV', component: CreateCvComponent},
   {path: 'postJob/postForm', component: PostFormComponent},
   {path: 'findInternship/postform1', component: Postform1Component},
   {path: 'findJob/detailJob/:id', component: DetailJobComponent},
-  {path: 'findInternship/detailInternship/:id', component: DetailJobComponent}
+  {path: 'findInternship/detailInternship/:id', component: DetailJobComponent},
+  {path: 'cv/:id', component: CvTemplateComponent}
 ];
 export const ROUTING = RouterModule.forRoot(APP_ROUTING);

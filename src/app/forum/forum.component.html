@@ -57,7 +57,7 @@
     <li *ngFor="let question of questions">
       <!-- begin timeline-time -->
       <div class="timeline-time">
-        <span class="date">{{question.date}}</span>
+        <span class="date">{{question.date['date']}}</span>
 <!--        <span class="time">04:20</span>-->
       </div>
 <!--       end timeline-time-->
@@ -71,7 +71,7 @@
       <div class="timeline-body">
         <div class="timeline-header">
 <!--          <span class="userimage"><img src="{{question.image}}" alt=""></span>-->
-          <span class="username"><a href="javascript:;">{{question.author.username}}</a> <small></small></span>
+          <span class="username"><a>{{question.author}}</a> <small></small></span>
 <!--          <span class="pull-right text-muted">{{question.category}}</span>-->
         </div>
         <div class="timeline-content">
@@ -80,7 +80,7 @@
           </p>
         </div>
         <div class="timeline-footer">
-          <a  class="m-r-15 text-inverse-lighter" [routerLink]="['/question', question.id, email]"><i class="fa fa-comments fa-fw fa-lg m-r-3" >
+          <a  class="m-r-15 text-inverse-lighter" [routerLink]="[question.id]"><i class="fa fa-comments fa-fw fa-lg m-r-3" >
 
           </i>Answers</a>
         </div>

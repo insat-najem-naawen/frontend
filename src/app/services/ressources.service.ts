@@ -13,7 +13,8 @@ import {baseURL} from '../Model/baseURL';
 export class RessourcesService {
    ressources: Ressource[];
 
-  constructor() {
+  constructor(private http: HttpClient,
+              private processHTTPMsgService: ProcessHTTPMsgService) {
     this.ressources = [ // tslint:disable-next-line:max-line-length no-unused-expression
       new Ressource(1, 'Cours deep learning', 'formation', 'The GitHub Student Developer Pack is back for another school year. The program has provided over 1.5 million students the best real-world developer tools and training for free since its introduction six years ago.\n' +
         '\n' +
@@ -188,27 +189,31 @@ export class RessourcesService {
     ];
 
   }
+//
+//   getRessources(): Observable<Ressource[]>  {
+//     return of(this.ressources);
+//   }
+//
+//   getRessourcesById(id: number): Observable<Ressource>  {
+//     return of (this.ressources.filter((ressource) => (ressource.id === id))[0]).pipe(delay(2000));
+//   }
+//
+//   getRessourcesByCategory(category: string): Observable<Ressource[]> {
+//     return of(this.ressources.filter((ressource) => (ressource.category === category))).pipe(delay(2000));
+// }
 
-  getRessources(): Observable<Ressource[]>  {
-    return of(this.ressources);
-  }
-
-  getRessourcesById(id: number): Observable<Ressource>  {
-    return of (this.ressources.filter((ressource) => (ressource.id === id))[0]).pipe(delay(2000));
-  }
-
-  getRessourcesByCategory(category: string): Observable<Ressource[]> {
-    return of(this.ressources.filter((ressource) => (ressource.category === category))).pipe(delay(2000));
-}
-
-
+  //
   // getRessources(): Observable<Ressource[]>  {
-  //   return this.http.get<Ressource[]>(baseURL + 'dishes').pipe(catchError(this.processHTTPMsgService.handleError));
-  // // }
+  //   return this.http.get<Ressource[]>('').pipe(catchError(this.processHTTPMsgService.handleError));
+  // }
   // getRessourcesById(id: number): Observable<Ressource>  {
   //   return this.http.get<Ressource>(baseURL + 'ressources/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
   // }
-  // getRessourcesByCategory(category: string): Observable<Ressource[]> {
-  //   return this.http.get<Ressource>(baseURL + 'ressources/' + category).pipe(catchError(this.processHTTPMsgService.handleError));
-  // }
+  getRessourcesByCategory(category: string): Observable<Ressource[]> {
+    return this.http.get<Ressource[]>('/get_ressources/' + category).pipe(catchError(this.processHTTPMsgService.handleError));
+  }
+  getRessourceById(id: number): Observable<any> {
+    return this.http.get<Ressource[]>('/get_ressource/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
+
+  }
 }

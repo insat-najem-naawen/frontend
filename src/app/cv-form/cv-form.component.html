@@ -4,18 +4,86 @@
 
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="name" class="fadeIn first" name="name" placeholder="name">
-      <input type="text" id="firstName" class="fadeIn second" name="firstname" placeholder="first name">
-      <input type="text" id="job" class="fadeIn third" name="job" placeholder="job">
-      <input type="text" id="mail" class="fadeIn fourth" name="job" placeholder="mail">
-      <input type="text" id="phoneNumber" class="fadeIn fourth" name="phoneNumber" placeholder="phone number">
-      <input type="submit" class="fadeIn fourth" value="Submit">
+    <form novalidate class="cont" [formGroup]="cvForm" #cvform= "ngForm" (ngSubmit)="onSubmit()">
+      <span (click)="close()">X<br></span>
+      <input type="text" id="name" class="fadeIn first" name="name" placeholder="name" formControlName="name" required
+             [(ngModel)]="name"
+             class="form-control">
+      <div *ngIf="formErrors.name">{{formErrors.name}}</div>
+
+      <input type="text" id="firstName" class="fadeIn second" name="firstName" placeholder="first name" formControlName="firstName" required
+             [(ngModel)]="firstName"
+             class="form-control">
+      <div *ngIf="formErrors.firstName">{{formErrors.firstName}}</div>
+
+      <input type="text" id="location" class="fadeIn second" name="location" placeholder="Location" formControlName="location" required
+             [(ngModel)]="location"
+             class="form-control">
+      <div *ngIf="formErrors.location">{{formErrors.location}}</div>
+
+      <input type="text" id="job" class="fadeIn third" name="job" placeholder="job"  formControlName="job"
+             [(ngModel)]="job"
+             class="job">
+
+      <input type="text" id="email" class="fadeIn fourth" name="email" placeholder="email" formControlName="email" required
+             [(ngModel)]="email"
+             class="email">
+      <div *ngIf="formErrors.email">{{formErrors.email}}</div>
+
+      <input type="text" id="phoneNumber" class="fadeIn fourth" name="phoneNumber" placeholder="phone number" formControlName="phoneNumber"
+             [(ngModel)]="phoneNumber"
+             class="phoneNumber">
+      <div *ngIf="formErrors.phoneNumber">{{formErrors.phoneNumber}}</div>
+
+      <input type="text" id="skill1" class="fadeIn fourth" name="skill1" placeholder="skill 1"  formControlName="skill1"
+             [(ngModel)]="skill1"
+             class="skill1">
+      <input type="text" id="skill2" class="fadeIn fourth" name="skill2" placeholder="skill 2" formControlName="skill2"
+             [(ngModel)]="skill2"
+             class="skill2">
+      <input type="text" id="skill3" class="fadeIn fourth" name="skill3" placeholder="skill 3" formControlName="skill3"
+             [(ngModel)]="skill3"
+             class="skill3">
+      <input type="text" id="skill4" class="fadeIn fourth" name="skill4" placeholder="skill 4" formControlName="skill4"
+             [(ngModel)]="skill4"
+             class="skill4">
+      <input type="text" id="language1" class="fadeIn fourth" name="language1" placeholder="language 1" formControlName="language1"
+             [(ngModel)]="language1"
+             class="language1">
+      <input type="text" id="language2" class="fadeIn fourth" name="language2" placeholder="language 2" formControlName="language2"
+             [(ngModel)]="language2"
+             class="language2">
+      <input type="text" id="language3" class="fadeIn fourth" name="language3" placeholder="language 3" formControlName="language3"
+             [(ngModel)]="language3"
+             class="language3">
+      <input type="text" id="experience1" class="fadeIn fourth" name="experience1" placeholder="work experience 1" formControlName="experience1"
+             [(ngModel)]="experience1"
+             class="experience1">
+      <input type="text" id="experience2" class="fadeIn fourth" name="experience2" placeholder="work experience 2" formControlName="experience2"
+             [(ngModel)]="experience2"
+             class="experience2">
+      <input type="text" id="experience3" class="fadeIn fourth" name="experience3" placeholder="work experience 3" formControlName="experience3"
+             [(ngModel)]="experience3"
+             class="experience3">
+      <input type="text" id="education1" class="fadeIn fourth" name="education1" placeholder="education 1" formControlName="education1"
+             [(ngModel)]="education1"
+             class="education1">
+      <input type="text" id="education2" class="fadeIn fourth" name="education2" placeholder="education 2" formControlName="education2"
+             [(ngModel)]="education2"
+             class="education2">
+      <input type="text" id="education3" class="fadeIn fourth" name="education3" placeholder="education 3"  formControlName="education3"
+             [(ngModel)]="education3"
+             class="education3">
+
+
+      <input type="submit" class="fadeIn fourth" value="Submit" [disabled]="cvForm.invalid"
+             (click)="post(name, firstName, email, job, location, phoneNumber, skill1, skill2, skill3, skill4, language1, language2, language3,
+             experience1, experience2,experience3, education1, education2, education3)">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a [routerLink]="['createCV']" class="underlineHover" href="#">See template</a>
+      <a  class="underlineHover" (click)="close()">See template</a>
     </div>
 
   </div>

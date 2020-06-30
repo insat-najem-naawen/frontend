@@ -3,17 +3,17 @@ import {User} from './user';
 
 export class Question {
   id: number;
-  author: User;
+  author: string;
   // category: string;
   description: string;
-  date: string;
+  date: Date;
   // image: string;
   answers: Answer[];
 
-  constructor( author: User, description = '', date = '', answers =  []) {
+  constructor( description = '', date: Date, author: string) {
     this.author = author;
     this.description = description;
     this.date = date;
-    this.answers = answers;
+    // this.answers = answers;
   }
 }

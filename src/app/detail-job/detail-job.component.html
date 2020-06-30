@@ -1,1 +1,21 @@
-<p>detail-job works!</p>
+<div class="contenu">
+  <!--<app-nav-ressources></app-nav-ressources>-->
+
+
+  <div *ngIf="opportunity" id="cov"  style="width: 50rem;">
+    <h4 class="card-title"><b>{{opportunity.title}}</b></h4>
+
+    <div class="card-body">
+      <div class="card-text">{{opportunity.description}}</div>
+      <a href="{{opportunity.link}}">{{opportunity.link}}</a>
+    </div>
+    <div class="element2"></div>
+  </div>
+
+  <div [hidden]="opportunity">
+    <img class="load" src="assets/images/loader.gif" alt="">
+  </div>
+
+</div>
+
+

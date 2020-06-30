@@ -2,7 +2,7 @@ import {Answer} from './answer';
 
 export class User {
   id: number;
-  firstName: string;
+  first_name: string;
   lastName: string;
   username: string;
   email: string;
@@ -14,7 +14,7 @@ export class User {
   constructor(id= 0, first_name= '', last_name= '', username= '', image= '', answers, email = ''
   , password = '') {
     this.id = id;
-    this.firstName = first_name;
+    this.first_name = first_name;
     this.lastName = last_name;
     this.username = username;
     this.image = image;

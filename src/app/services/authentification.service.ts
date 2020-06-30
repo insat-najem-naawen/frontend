@@ -26,5 +26,6 @@ export class AuthentificationService {
   }
   logout() {
     localStorage.removeItem('token');
+    console.log('removed');
   }
 }
